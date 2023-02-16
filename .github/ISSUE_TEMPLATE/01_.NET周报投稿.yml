@@ -28,10 +28,3 @@ body:
       placeholder: 50-200字之间
     validations:
       required: true
-  - type: checkboxes
-    attributes:
-      label: 已添加到周报
-      description: 无需处理这一项内容，只是为了让小编不忘记
-      options:
-        - label: 已添加到周报
-          required: true
