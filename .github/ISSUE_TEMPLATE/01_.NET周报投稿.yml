@@ -34,3 +34,4 @@ body:
       description: 无需处理这一项内容，只是为了让小编不忘记
       options:
         - label: 已添加到周报
+          required: true
