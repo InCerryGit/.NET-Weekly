@@ -1,0 +1,42 @@
+name: dotnet周报投稿
+description: "向.NET周报投稿，将会在下一期的.NET周报中展示"
+title: "[投稿]: "
+labels: ["bug", "triage"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你想下一期的.NET周报投稿!
+  - type: input
+    id: title
+    attributes:
+      label: 标题
+      description: 请填写你希望的内容标题
+      placeholder: 10-50字以内
+    validations:
+      required: false
+  - type: textarea
+    id: link
+    attributes:
+      label: 链接
+      description: 请填写指向投稿内容的链接
+      placeholder: "如：https://github.com/InCerryGit/.NET-Weekly"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 简介
+      description: 请填写关于投稿内容的简介
+      placeholder: 50-200字之间
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 许可协议
+      options:
+        - label: 我同意将投稿内容授权给InCerry用于.NET周报的发布
+          required: true
