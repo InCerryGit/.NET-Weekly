@@ -17,7 +17,7 @@ body:
     attributes:
       label: 链接
       description: 请填写指向投稿内容的链接
-      placeholder: 如：https://github.com/InCerryGit/.NET-Weekly
+      placeholder: "如：https://github.com/InCerryGit/.NET-Weekly"
     validations:
       required: true
   - type: textarea
