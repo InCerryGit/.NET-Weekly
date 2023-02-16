@@ -5,8 +5,7 @@ labels: [投稿]
 body:
   - type: markdown
     attributes:
-      value: |
-        欢迎向下一期的.NET周报共享内容
+      value: 欢迎向下一期的.NET周报投稿
   - type: input
     attributes:
       label: 标题
