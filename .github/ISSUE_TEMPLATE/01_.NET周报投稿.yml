@@ -1,7 +1,7 @@
 name: .NET周报投稿
-description: 向.NET周报投稿，将会在下一期的.NET周报中展示。
-title: '[投稿]:'
-labels: []
+description: "向.NET周报投稿，将会在下一期的.NET周报中展示"
+title: "[投稿]:"
+labels: [投稿]
 body:
   - type: markdown
     attributes:
