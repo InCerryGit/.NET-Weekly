@@ -1,0 +1,462 @@
+## 国内文章
+
+### CAP 8.0 版本发布通告 - CAP 7岁生日快乐！
+
+https://www.cnblogs.com/savorboard/p/cap-8-0.html
+
+今天宣布CAP 8.0版本正式发布，恰逢项目七周年及作者生日。七年间，CAP共发布61个版本，在GitHub获得6.3K星标，有108名贡献者，核心包在NuGet上的下载量达640万次。CAP是一种分布式事务解决方案，通过本地消息表保证数据安全，同时可作为EventBus使用。8.0版本主要更新包括全面支持.NET 8，优化Dashboard认证授权，新增配置项以自定义回溯时间窗，改进消费者预取和分组调度配置项的协同工作，NATS支持配置DeliverPolicy，默认为New。此外，修复了多个BUG，包括消息无限重试、Open Telemetry上下文丢失等问题。破坏性改动包括移除Dashboard中的某些配置项。更多信息请查看官方文档。
+
+### EF Core助力信创国产数据库
+
+https://www.cnblogs.com/CreateMyself/p/17900180.html
+
+本文讨论了国产数据库的发展，特别是人大金仓和华为高斯数据库，它们都基于PostgreSQL。作者在工作之余将EF Core适配到这些数据库并开源，以便社区共同改进。目前已支持人大金仓EF Core 6.x和华为高斯EF Core 8.0，未来计划支持更多版本。作者鼓励社区贡献而非仅提问题，并强调在处理问题时需要具体的代码示例。
+
+### .NET中如何实现高精度定时器
+
+https://www.cnblogs.com/czwy/p/17915333.html
+
+本文探讨了在.NET中实现高精度定时器的方法。首先介绍了定时器的三个核心功能：计时、等待和触发模式，并解释了如何使用Windows系统的API和.NET类来获取高精度时间戳。文章详细讨论了两种等待策略：自旋等待和阻塞等待，以及如何通过系统API调整Windows的计时器精度。最后，提到了多媒体定时器`timeSetEvent`作为实现高精度定时器的一种方法，尽管它已被官方标记为过时，但在精度和稳定性方面仍优于其他方法。
+
+### 用C#也能做机器学习？
+
+https://www.cnblogs.com/mingupupu/p/17918738.html
+
+本文介绍了如何在C#中使用ML.NET进行机器学习，特别是通过ML.NET Model Builder构建猫狗识别模型。ML.NET是一个适合.NET开发者的免费、开源机器学习框架，支持C#或F#语言。Model Builder提供了一个直观的界面，使得在Visual Studio中生成、训练和部署机器学习模型变得简单，无需深厚的机器学习背景。它还支持AutoML自动选择最佳算法和设置。Model Builder作为Visual Studio扩展，使.NET开发者能够在熟悉的环境中工作，无需依赖云资源或其他服务。
+
+### 一款基于.NET Core的快速开发框架、支持多种前端UI、内置代码生成器
+
+https://www.cnblogs.com/Can-daydayup/p/17922742.html
+
+本文介绍了WalkingTec.Mvvm（简称WTM），这是一个基于.NET Core的开源快速开发框架，支持多种前端UI，具备代码生成器，旨在提升开发效率。WTM支持前后端分离，降低沟通成本，内置了用户、角色、权限等管理功能，支持单点登录和分布式数据库。技术栈包括LayUI、React、VUE、Blazor等前端技术，以及.NET Core、EF Core、Redis等后端技术。数据库支持MySql、Sql Server、PostgreSQL。WTM的源代码和文档可在GitHub查看，项目已被收录为C#/.NET/.NET Core优秀项目。DotNetGuide技术社区提供.NET相关资源和交流平台，鼓励开发者分享经验和技术问题。
+
+### 简便实用：在 ASP.NET Core 中实现 PDF 的加载与显示
+
+https://www.cnblogs.com/powertoolsteam/p/17911303.html
+
+本文讲述了如何在ASP.NET Core中加载和显示PDF文件。首先，使用Visual Studio创建ASP.NET Core Web应用程序，并选择.NET Core 6.0作为目标框架。然后，安装GrapeCity.Documents.Pdf依赖包。接着，在Index.cshtml.cs页面中定义服务器端代码生成PDF文件，包括添加图片、文本格式设置、添加标题和项目列表。最后，将生成的PDF文件保存到Web根目录。文中提供了详细的代码示例和最终效果的截图。
+
+### Semantic Kernel 正式发布 v1.0.1 版本
+
+https://www.cnblogs.com/shanyou/p/17924196.html
+
+微软发布了Semantic Kernel的.NET 1.0.1版本，这是一个开源SDK，结合了AI服务和传统编程语言，如C#和Python，以创建AI应用程序。它作为AI编排层，与Microsoft AI模型堆栈和Copilot AI助手配合。新版本提供了文档，介绍了如何创建能与用户互动的AI代理，执行任务如自动化流程。文档还涵盖了构建AI代理的核心组件，如插件、规划器和角色。Semantic Kernel现在稳定，未来将专注于AI连接器、Memory连接器和Agent抽象。微软鼓励社区参与AI连接器的开发，核心团队将在假期后审查社区贡献。
+
+### 记一次 .NET 某药厂业务系统 CPU爆高分析
+
+https://www.cnblogs.com/huangxincheng/p/17916751.html
+
+本文讲述了作者帮助朋友分析程序CPU使用率过高的问题。首先，通过procdump工具抓取dump文件，然后使用Windbg的!tp命令确认CPU利用率为88%。通过!cpuid命令发现服务器只有4个CPU核心，性能较弱。进一步分析发现程序有451个线程，其中443个是后台线程，多数线程通过new Thread创建而非线程池。使用~*e !clrstack命令检查线程栈，发现大多数线程在执行Thread.SleepInternal。作者最终意识到频繁的上下文切换可能是导致CPU爆高的原因，特别是在Loop方法中发现了大量的Sleep(1)调用。
+
+### 升讯威在线客服系统的并发高性能数据处理技术：超强的 SignalR
+
+https://www.cnblogs.com/sheng_chao/p/17921167.html
+
+本文介绍了作者在业余时间开发的升讯威在线客服系统，该系统免费开源且用户众多。系统通过客户的压力测试，表现出色，无异常掉线，消息实时到达。作者计划分析系统的高性能并发技术，首篇聚焦SignalR技术。SignalR是ASP.NET Core的实时Web功能库，适用于需要服务器实时更新的应用，如游戏、社交网络等。它支持WebSockets、Server-Sent Events和长轮询等传输技术，自动选择最佳传输方法。SignalR使用中心（Hub）进行通信，允许客户端和服务器互调方法，支持JSON和MessagePack协议。作者还展示了如何在客服系统中创建SignalR中心，配置服务器，并添加客户端代码以实现实时通信。
+
+### Net 高级调试之十四：线程同步的基础知识和常见的同步原语
+
+https://www.cnblogs.com/PatrickLiu/p/17910805.html
+
+本文是《Net 高级调试》系列的第十四篇，重点介绍了多线程中锁的底层实现原理，而非其使用方法和API。文章强调了对.Net框架底层理解的重要性，有助于更好地进行调试。调试环境包括Windows 10专业版、Windbg Preview、Visual Studio 2022和.Net Framework 4.8。基础知识部分讲述了线程同步原语，包括C#、CLR和OS层的线程表示，以及不同类型的锁，如AutoResetEvent、Semaphore、Monitor和ThinLock。最后，文章提供了源码调试的具体过程，通过实际代码来验证所学知识。
+
+### 将Abp默认事件总线改造为分布式事件总线
+
+https://www.cnblogs.com/jevonsflash/p/17917031.html
+
+本文介绍了分布式事件总线的原理和实现。本地事件总线通过Ioc容器和事件订阅表实现事件的注册与触发。分布式事件总线通过中间件如RabbitMQ、Kafka、Redis转发事件，与本地事件总线兼容。自动订阅和事件转发功能确保本地事件注册时同时订阅分布式事件，并在本地事件触发时将消息转发到分布式总线。消费端接收分布式事件消息后，解析类型并触发本地事件，由本地事件处理器完成处理。
+
+### .NET周刊【12月第2期 2023-12-13】
+
+https://www.cnblogs.com/InCerry/p/dotnet_week_23_12_2.html
+
+本文汇总了.NET领域的多篇文章。首先介绍了使用.Net6的miniapi开发简洁API的方法，包括数据库操作和Swagger配置。接着分享了C#/.NET/.NET Core的优秀项目和框架，如CAP、ZEQP.WMS和HandyControl，以及.NET平台下的网络爬虫框架DotnetSpider。此外，C#有望成为2023年度编程语言，TIOBE榜单显示其增长迅速。文章还分析了博客园频繁崩溃的原因，探讨了SQL Server的性能问题。另外，.NET8的AOT编译性能优化被详细讨论，包括减少可执行文件大小和提升性能。还有对.NET内存管理术语的解释，以及使用.NET 8开发个人网盘项目的介绍。最后，ML.NET 3.0的发布强化了深度学习和数据处理能力。
+
+### .NET周刊【12月第1期 2023-12-06】
+
+https://www.cnblogs.com/InCerry/p/dotnet_week_23_12_1.html
+
+本文汇总了多篇关于.NET和相关技术的文章。介绍了openEuler操作系统的多处理器架构支持和.NET社区合作机会；MAUI Blazor应用中显示本地媒体文件的新方法；Visual Studio 2022 17.8版本的性能提升；.NET中六种定时器的使用场景；HtmlAgilityPack库在.NET中解析HTML的功能；ASP.NET Core Web API中设置Json响应格式的方法；Cron表达式在Unix系统中的应用及在.NET中的解析执行；VS2022中调试.Net源码的配置方法；以及C#中只读结构体成员可能导致的问题。这些内容涵盖了操作系统支持、开发工具更新、编程技巧和潜在BUG的警示，对.NET开发者具有实用价值。
+
+### Kernel Memory 入门系列：Kernel Memory Service
+
+https://www.cnblogs.com/xbotter/p/kernel_memory_service.html
+
+本文介绍了Kernel Memory Service，一个GitHub上的项目，提供独立部署后台和接口服务。首先通过Git Clone下载源码，然后执行setup脚本或命令进行初始化，配置项存储在appsettings.json中。配置完成后，运行run脚本启动服务，本地运行可通过Swagger页面访问。C#用户可用MemoryWebClient包调用接口。项目还提供了工具脚本，如启动Qdrant和RabbitMQ服务，初始化和启动Kernel Memory Service，上传文件和提问等功能。
+
+### 封装Detours用于Python中x64函数hook
+
+https://www.cnblogs.com/kanadeblisst/p/17922099.html
+
+本文介绍了微软的Detours框架，它支持多种处理器架构，用于实现API hook。文中详细描述了如何在x64环境下编译Detours，包括解决编译错误和生成Debug版本的方法。还提供了使用Detours进行函数hook的代码示例，并说明了如何在项目中引入Detours的头文件和库文件。最后，作者推荐了使用预处理器指令在代码中直接引入库文件的方式。
+
+### Kernel Memory 入门系列：快速开始
+
+https://www.cnblogs.com/xbotter/p/kernel_memory_quick_start.html
+
+本文介绍了如何快速开始使用Kernel Memory，包括通过NuGet安装包、构建内存实例、内容导入和问答查询。构建时，可配置OpenAI或Azure OpenAI服务，支持自定义文本生成和Embedding模型。内容导入支持文件路径、文件流、文档集合和URL方式。问答功能通过调用`AskAsync`方法实现，可获取答案及相关文档信息。
+
+### 使用代码生成工具快速开发应用-结合后端Web API提供接口和前端页面快速生成，实现通用的业务编码规则管理
+
+https://www.cnblogs.com/wuhuacong/p/17921357.html
+
+本文介绍了如何使用代码生成工具Database2Sharp和SqlSugar开发框架，快速开发Winform、WPF和Vue3+ElementPlus前端应用。通过通用业务编码规则的管理功能，可以统一生成和维护各种编码，如订单号等。文章展示了数据库设计，后端接口，以及Winform和WPF界面的生成过程。最后，介绍了如何利用生成的Web API控制器和Service层接口，快速实现Vue3前端界面的开发。
+
+### 称重驱动二次开发教程
+
+https://www.cnblogs.com/yizhuqing/p/17921902.html
+
+本文介绍了如何通过二次开发快速集成新的电子秤驱动到系统。首先，需要了解系统介绍并下载相关软件。接着，创建一个控制台工程，并添加引用DDS.IOT.Weight.exe。然后，新建一个继承自WeightBase的电子秤类，并实现虚方法。最后，通过后台任务模拟电子秤，定时输出随机重量。这些步骤可以帮助开发者快速实现电子秤驱动的集成。
+
+### Blazor入门100天 : 自做一个支持长按事件的按钮组件
+
+https://www.cnblogs.com/densen2014/p/17915285.html
+
+本文继续介绍了博主的系列博客，提供了配套源码和在线演示demo。文章详细说明了如何创建一个支持长按功能的Blazor组件，包括设置长按触发的回调委托、点击事件处理、判断是否触摸设备等。通过代码示例，展示了组件的实现过程和功能。
+
+### AntDesignBlazor示例——Modal表单
+
+https://www.cnblogs.com/known/p/17923002.html
+
+本文是AntDesign Blazor的入门教程，分享了如何创建和操作Modal表单和Table。首先，介绍了在Weather.razor文件中添加新增按钮和Modal组件，设置属性并绑定事件。接着，创建WeatherForm组件，包含日期、温度和摘要字段，并在WeatherForecast模型类中添加必填特性。然后，实现了Modal表单的数据编辑功能，包括绑定Model对象、保存数据的事件处理。最后，教程展示了如何在Table中添加操作列，实现编辑和删除功能，并在WeatherService类中添加相应的方法。教程还提供了示例代码仓库链接和视频教程，方便学习和参考。
+
+
+
+## 主题
+
+### 宣布 .NET Aspire 预览版 2 - .NET 博客
+https://devblogs.microsoft.com/dotnet/announcing-dotnet-aspire-preview-2/
+
+.NET Aspire Preview 2 已发布。
+
+它包括各种改进，例如改进仪表板的各种视图、改进运行容器时的配置自定义以及添加 MySQL 和 MongoDB 等组件。
+
+### OpenSilver 2.0 简介 - OpenSilver
+https://opensilver.net/announcements/2-0/
+
+OpenSilver 2.0 已经发布。
+
+此版本包括对 Visual Basic .NET 的支持、与 Blazor、React 和 Angular 的集成、设计时实时 XAML 预览、对高级布局系统的支持、更快的基于 WebView 的模拟器以及各种性能改进。
+
+### 发布 WCF 8.0 · dotnet/wcf
+https://github.com/dotnet/wcf/releases/tag/v8.0.0-rtm
+
+WCF客户端8.0已发布。
+
+除了删除了接收配置名称的 API 之外，此版本没有重大变化，但客户端支持政策是自发布之日起提供三年支持（直至 2026 年）。对先前版本 WCF Client 6.0 的支持将于 2024 年 11 月结束。
+
+### 版本 2.3.3 · mysql-net/MySqlConnector
+https://github.com/mysql-net/MySqlConnector/releases/tag/2.3.3
+
+MySQL Connector for .NET 2.3.3/2.3.2 已发布。
+
+此版本包括改进的架构支持和多个错误修复。
+
+- [版本 2.3.2·mysql-net/MySqlConnector](https://github.com/mysql-net/MySqlConnector/releases/tag/2.3.2)
+
+### ReSharper 和 Rider 2023.3.2 – 错误修复已落地！ | .NET 工具博客
+https://blog.jetbrains.com/dotnet/2023/12/20/resharper-and-rider-2023-3-2-bug-fix/
+
+ReSharper / Rider 2023.3.2 已发布。
+
+此版本修复了自 2023.3 版本以来 ReSharper 和 Rider 中的各种错误。
+
+- [ReSharper 和 Rider 2023.3 的第一组错误修复已在这里！ | .NET 工具博客](https://blog.jetbrains.com/dotnet/2023/12/13/rsrp-rd-2023-3 -1-错误修复/)
+
+### Win11 主题的 WPFUI 协作 · dotnet/wpf · 讨论 #8533 · GitHub
+https://github.com/dotnet/wpf/discussions/8533
+
+宣布与 WPFUI 合作将 Windows 11 Fluent UI 主题引入 WPF。
+
+- [WPF UI x WPF 协作·lepoco/wpfui·讨论 #880](https://github.com/lepoco/wpfui/discussions/880)
+
+### 我们的代码覆盖率工具有哪些新增功能？ - .NET 博客
+https://devblogs.microsoft.com/dotnet/whats-new-in-our-code-coverage-tooling/
+
+关于代码覆盖率工具（Microsoft.CodeCoverage）的新功能。
+
+支持具有静态检测的所有平台、支持新的报告格式、引入 dotnet-coverage 命令、自动解决方案合并、性能改进等等。
+
+### 2023 年降临节日历
+
+- C# 降临节日历
+    - [neue cc - 介绍 .NET 8 使用示例以及 Unity C# 11 与 ZLogger v2 的兼容性](https://neue.cc/2023/12/19_zlogger2.html)
+    - [使用 UnsafeAccessor 测试私有方法 - Qiita](https://qiita.com/Shaula/items/7622127c60b7c19a0a15)
+    - [我从 Untiy 启动 C# 的 IEnumerator - Kako 所做的各种事情](https://kakovail.info/entry/advent_2023_cs)
+    - [C# (.NET) 中的最小-最大标准化 - Qiita](https://qiita.com/michimichix521/items/fd60471434698c297e88)
+    - [LINQ - Python 备忘单](https://zenn.dev/shimat/articles/d8812d20e803cf)
+    - [在 Stride 中使用 BepuPhysics 作为物理引擎 - Qiita](https://qiita.com/skitoy4321/items/394ebfb6385ef482cada)
+    - [async/await 会继续成为你最好的朋友吗](https://scrapbox.io/hadashiA/async%2Fawait%E3%81%AF%E4%BB%8A%E5%BE%8C%E3%82%82%E3%83%99%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%B3%E3%83%89%E3%81%A7%E3%81%82%E3%82%8A%E7%B6%9A%E3%81%91%E3%82%8B%E3%81%8B)
+    - [让我们尝试使用 USB 摄像头 - Qiita](https://qiita.com/secile/items/21b7da5d32bc44dbb947)
+    - [我尝试了 AutoML，它允许您在没有机器学习专业知识的情况下使用 C# + ML.NET 创建高性能 AI - Qiita](https://qiita.com/TechNinja/items/ac7faf3363e263b8c619)
+    - [注意 Mono.Cecil 中的“.s”命令](https://zenn.dev/ruccho/articles/a8bbb8f0a58225)
+    - [尝试使用 Microsoft.Extensions.ObjectPool](https://zenn.dev/guil/articles/167f6a872d8a81)
+    - [使用 C# 创建。关于嵌入式GUI应用程序通信方法-Qiita](https://qiita.com/qa65000/items/64be8bcf45dc2c39b48f)
+    - [用通用树做类似可变长度结构的事情 🌳 - Qiita](https://qiita.com/up-hash/items/57b5beb95e8fb7f94e1c)
+    - [EF Core 查询表达式 - Qiita](https://qiita.com/nekohei/items/abee7fe81ca9d04221aa)
+    - [mex 库封装 - Qiita](https://qiita.com/saka_pon/items/ea260f454d8b1c47b377)
+    - [C# 中的 OpenTelemetry 入门 ](https://blog.neno.dev/entry/2023/12/23/194947)
+- Blazor 降临节日历
+    - [“我尝试使用 Blazor 表达网络游戏等中常见的“长按按钮”的 UI - Qiita](https://qiita.com/jsakamoto/items/3965b7a3c895fe122dc8)
+    - [我想让塑料模型照片闪闪发光 x Blazor WebAssembly x OpenCV - koudenpa 的博客](https://koudenpa.hatenablog.com/entry/2023/12/14/000000)
+    - [使使用 Blazor WebAssembly 创建的 Web 应用程序“snow catch”游戏能够通过🎙️语音命令（语音识别）进行操作 - Qiita](https://qiita.com/jsakamoto/items/9378a345a96113319102)
+    - [迁移到 .NET 8 自动渲染模式后，Blazor WebAssembly 应用程序无法处理 InvalidOperationException - Qiita](https://qiita.com/jsakamoto/items/15f330fdfcf4ddf9e2c5)
+    - [我也想在 Blazor 上进行视图转换 - Qiita](https://qiita.com/jsakamoto/items/7409fb67c9a8a80880de)
+    - [使用 .NET 8 的新渲染模式 - Qiita，在 Blazor 服务器中的范围服务中保存状态可能会很危险](https://qiita.com/jsakamoto/items/b2a7a4aed0f4d6868340)
+    - [在 Blazor 应用中应对 2 年无人看管的代码警告 - Qiita](https://qiita.com/kaorumori/items/a8d03f451a9087573cda)
+    - [Blazor - 如何判断它是在服务器上还是在浏览器中运行 - Qiita](https://qiita.com/jsakamoto/items/8999d0322c64f265369b)
+    - [.NET 8 自动渲染模式下的 Blazor 可能无法在 WebAssembly 模式下工作，即使已下载 .wasm - Qiita](https://qiita.com/jsakamoto/items/8bb81d11c151cec5920a)
+    - [使用轻量级且功能强大的 HAVIT Blazor 进行 Blazor 开发 - Qiita](https://qiita.com/KennethEHD/items/0aa02369ec5914e76430)
+    - [[修订]如何在 Blazor 中对单选按钮输入元素进行双向数据绑定 - Qiita](https://qiita.com/jsakamoto/items/a326ddb14b0a7b6c4a74)
+- 其他的
+    - [利用C#和YouTube API调查VTuber分布趋势-Qiita](https://qiita.com/yn-cover/items/6bf9b404bb7685e60b44)
+    - [[C#]使用异步调用 CPU 绑定进程时，线程不会分布](https://zenn.dev/meglia/articles/0f7262c09d87dc)
+    - [在C# + xUnit项目中以报告形式输出单元测试结果和测试覆盖率。 - Qiita](https://qiita.com/h-uminoue-gxp/items/9218fd32a33e3b71edae)
+    - [使用SQL CLR和CData ADO.NET Provider直接从SQL Server访问kintone - Qiita](https://qiita.com/mania3bb2007/items/fe7fc7ee374ae28dcf37)
+    - [使用 Roslyn API 获取字段和属性类型和名称 - Qiita](https://qiita.com/lx-sasabo/items/5732e944e290391771bc)
+    - [[C#] 我尝试实现就地合并排序](https://zenn.dev/happy_elements/articles/c471ee57b48036)
+    - [使用 Roslyn API 仅获取第一行摘要标签注释 - Qiita](https://qiita.com/lx-sasabo/items/793a0b5b8b7d56579acb)## 文章、幻灯片等
+
+### 使用 actix-web 托管 Blazor WebAssembly - Qiita
+https://qiita.com/TellMin/items/9e7f1e576a195103aa92
+
+了解如何使用 Rust 的 actix-web 框架托管 Blazor WebAssembly 应用程序。
+
+### 尝试过 .NET Aspire - Qiita
+https://qiita.com/Hydrangeas/items/b87bd39843eee0633cb0
+
+创建.NET Aspire项目并涉及配置、日志记录等的记录。
+
+### gRPC 管道通信似乎非常适合 .NET 8 中的进程间通信 - Qiita
+https://qiita.com/spc_ksudoh/items/760a41a73c825eb70e70
+
+了解使用带有命名管道的 gRPC 作为进程间通信方法的好处以及如何实现它。
+
+- [gRPC 管道通信似乎非常适合 .NET 8 中的进程间通信：第 2 部分如何编写特定代码 - Qiita](https://qiita.com/spc_ksudoh/items/b998a0decc772b0e4785)
+
+### String.Intern - 使用还是不使用？一个性能问题
+https://sergeyteplyakov.github.io/Blog/benchmarking/2023/12/10/Intern_or_Not_Intern.html
+
+关于String.Intern的性能。文章还提到了使用 NativeAOT 运行时的差异。
+
+### 一年回顾：庆祝今年的里程碑
+https://avaloniaui.net/Blog/a-year-in-recap-celebating-this-years-milestones
+
+Avalonia 的 2023 年回顾文章。
+
+### 将语义内核提示写入文件
+https://zenn.dev/tomokusaba/articles/379d39dc225b88
+
+如何在外部文件中编写语义内核中使用的提示并调用它们。
+
+### [C#] 推荐给初学者！使用代码分析器！
+https://zenn.dev/inuinu/articles/c60abf13d5f47a
+
+解释如何使用分析仪。介绍内置分析器，如何抑制分析器，介绍Roslynator等第三方分析器。
+
+### 宣布 HackTogether：伟大的 .NET 8 黑客获胜者 - .NET 博客
+https://devblogs.microsoft.com/dotnet/great-dotnet-8-hack-winners/
+
+宣布 The Great .NET 8 Hack 活动的获奖者。
+
+- 一般：[NASA TechPort 头条新闻](https://github.com/tagr/greatnet8hack-techport)
+- 最佳人工智能：[Betakads](https://github.com/ZadokJoshua/betakads-avalonia-app)
+- 最佳云原生：[AI Counselor](https://github.com/Cloud-Jas/AI-Counselor)
+
+### 模板化语义内核提示
+https://zenn.dev/tomokusaba/articles/a403d9ec250ec8
+
+如何将提示转换为模板函数并使用语义内核调用它。
+
+### GitHub Codespaces 语义内核 v1.0.1 上手版
+https://zenn.dev/ymd65536/articles/semantic_kernel_v101_handson
+
+在 GitHub Codespace 和 Azure OpenAI 上运行 Semantic Kernel v1.0.1 的设置说明。
+
+### StronglyTypedId 库更新 - 简化、模板化和 CodeFixes：使用强类型实体 ID 避免原始痴迷 - 第 8 部分
+https://andrewlock.net/updates-to-the-stronglytypedid-library/
+
+关于StronglyTypedId库的重新设计以及模板的更改等。
+
+### 在 WSL2 Ubuntu 上安装 .NET 8.0
+https://zenn.dev/yukiko_bass/articles/e6f9f22da5f15e
+
+有关在 WSL2 上的 Ubuntu 22.04 上安装 .NET 8 的说明。
+
+### 命名变得简单：AI 支持的重命名建议 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/ai-powered-rename-suggestions/
+
+引入使用 GitHub Copilot 的标识符重命名建议功能，该功能在 Visual Studio Preview 中受支持。
+
+### 在 .NET 8 中将 MudBlazor 与 Blazor Web 应用程序结合使用
+https://zenn.dev/tetr4lab/articles/74bd50585434ab
+
+将 MudBlazor（与 .NET 8 不正式兼容）与 .NET 8 Blazor Web 应用程序一起使用的说明。
+
+### 将 OpenAI 图像生成集成到 .NET 应用程序中
+https://weblog.west-wind.com/posts/2023/Dec/21/Integrating-OpenAI-image- Generation-into-your-NET-Application介绍如何使用 OpenAI 的 .NET 图像生成 API 和简单的包装器库。
+
+### 重新审视 F# 的 WASM
+https://dev.to/tunaxor/revisiting-wasm-for-f-38c1
+
+将 F# 与 Blazor WebAssembly 结合使用时与库和 JavaScript 的互操作性。
+
+### Semantic Kernel1.0.1 正式版，自动选择Semantic Kernel函数并返回答案
+https://zenn.dev/tomokusaba/articles/e667217a2045cc
+
+如何在Semantic Kernel中实现自定义函数的自动选择。
+
+### 解锁托管内存的秘密：深入了解事件处理程序泄漏！- Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/unlocking-the-secrets-of-management-memory-dive-into-event-handler-leak-insights/
+
+介绍 Visual Studio 17.9 Preview 1 中引入的新内存分析功能。
+
+此功能使得可以快速找到事件处理程序中的对象泄漏。
+
+### .NET Core 中 Windows 和 Linux 的时区 ID 不同
+https://zenn.dev/ynug/articles/dot-net-time-zone
+
+如何处理时区 ID 根据 Windows 和 Linux 等平台不同而不同的情况。
+
+### 从.NET 8开始，将LibraryImportAttribute中使用的SafeHandle类型构造函数公开 - 程序系统备忘录博客
+https://tan.hatenadiary.jp/entry/2023/11/23/015139
+
+在 .NET 8 中，用于调用使用 LibraryImportAttribute 声明的外部库的 SafeHandle 类型的构造函数必须是公共的。
+
+本文还解释了生成的代码是如何更改的以及更改的原因和必要性。
+
+### 福冈.NET Conf 2023 - connpass
+https://fukuten.connpass.com/event/303390/
+
+.NET Conf 2023 福冈当地活动。于 2024 年 2 月 3 日星期六举行。
+
+### Azure SignalR 服务的 HttpContext 问题
+https://dev.to/1kevgriff/httpcontext-issues-with-azure-signalr-service-21d0
+
+Azure SignalR 服务具有无法使用 HttpContext 的独特特征，这可能会出现问题。
+
+### 尝试 NUnit4 的新异步断言
+https://zenn.dev/tomokusaba/articles/890091dd520f08
+
+NUnit 4 中的异步断言简介。
+
+### 让我们通过 .NET SDK 使用 Azure OpenAI 服务的 JSON 模式和工具
+https://zenn.dev/microsoft/articles/aoai-tools-jsonmode-in-dotnet
+
+了解如何使用适用于 .NET 的 SDK 中的 Azure OpenAI 服务的 JSON 模式和工具属性。
+
+### 在 .NET 8 上尝试最新的 React-TypeScript SPA 模板 | Doxel
+https://www.docswell.com/s/shosuz/Z4QRL8-2023-11-25-172313
+
+引入在 .NET 8 中结合了 React 和 ASP.NET Core 的新 SPA 模板。
+
+### HTTP/2快速重置概述及对策
+https://speakerdeck.com/murachiakira/2-rapid-reset-nogai-yao-todui-ce
+
+HTTP/2 快速重置攻击的说明。
+
+### 关于 .NET 第 8 代 Blazor
+https://speakerdeck.com/tomokusaba/dot-net-8shi-dai-noblazornituite
+
+.NET 8 中 Blazor 托管模型更改的简要说明。
+
+### C# 中的 OpenTelemetry 入门
+https://speakerdeck.com/nenonaninu/c-number-dehazimeru-opentelemetry
+
+OpenTelmetry 简介、ASP.NET 中的支持和使用、使用 SignalR 进行跟踪等。
+
+- [C# 中的 OpenTelemetry 入门 ](https://blog.neno.dev/entry/2023/12/23/194947)
+
+### .NET Conf 回顾日本/晚会
+
+- [GitHub - ufcpp/DotNetConf2023Recap：.NET Conf 2023 Recap Japan“开发工具的最新更新”](https://github.com/ufcpp/DotNetConf2023Recap)- [.NET 夜间派对@品川](https://zenn.dev/ymd65536/articles/dotnet_night_party_2023)
+- [.NET 之夜派对@品川现场编码对决](https://zenn.dev/tomokusaba/articles/e582d24e37d930)
+- [.NET Night Party@品川现场编码对决如果是 IF Blazor Apps 模板会怎样？ ](https://zenn.dev/tomokusaba/articles/afbf1e0718d3df)
+
+
+## 库、存储库、工具等。
+
+### GitHub - SwissLife-OSS/snapshooter: Snapshooter 是 .NET Core 和 .NET Framework 的快照测试工具
+https://github.com/SwissLife-OSS/snapshooter
+
+.NET 中用于快照测试的库。
+
+- [.NET 中的快照日志测试 | johnnyreilly](https://johnnyreilly.com/snapshot-log-tests-dotnet)
+
+### GitHub - sator-imaging/docfx-pages: 只需 1 个操作即可将 docfx API 参考部署到 GitHub Pages
+https://github.com/sator-imaging/docfx-pages
+
+使用 docfx 将 API 引用发布到 GitHub Pages 的 GitHub Action。
+
+- [docfx + GitHub 页面劣质模板 - Qiita](https://qiita.com/sator_imaging/items/53d9d9e00ad3059c540a)
+
+### GitHub - timonkrebs/MemoizR: C# 的声明式结构化并发
+https://github.com/timonkrebs/MemoizR
+
+- [MemoizR - C# 的声明式结构化并发](https://khalidabuhakmeh.com/memoizr-declarative-structed-concurrency-for-csharp)
+
+### Sekiban - 事件溯源和 CQRS 框架 - 主页
+https://www.sekiban.dev/
+
+使用 Azure Cosmos DB 和 AWS Dynamo DB 的 C# 事件源框架。
+
+- [Sekiban - 使用 C# 的事件源和 CQRS 框架它可以将数据存储到 Azure Cosmos DB 或 AWS Dynamo DB](https://github.com/J-Tech-Japan/Sekiban)
+- [JTEC Japan Co., Ltd. 发布 C# 事件溯源框架“Sekiban”作为开源软件](https://prtimes.jp/main/html/rd/p/000000003.000103357.html)
+
+## 网站、文档等
+### 推文
+
+**根据目标类型，为集合迭代生成的代码存在差异。**
+
+https://x.com/steplyakov/status/1737524544171384927?s=12
+
+---
+
+**async/await 的历史故事。**
+
+https://x.com/dsymetweets/status/1735396207328162082?s=12
+
+https://x.com/davidfowl/status/1735686682354356690?s=12
+
+---
+
+**您可以使用 DebuggerDisplay 属性的 Name 属性来显示Key而不是索引。**
+
+https://x.com/nietras1/status/1736703070401155195?s=12&t=ggvrrZ7oLogHyNoIGNgjbw
+
+---
+
+**尝试在 NativeAOT 上运行 Mono 解释器。**
+
+https://x.com/filipnavara/status/1734996595349836154?s=12
+
+## 版权声明
+
+* 国内板块由 InCerry 进行整理 : https://github.com/InCerryGit/WeekRef.NET
+* 其余内容来自 Myuki WeekRef，由InCerry翻译（已获得授权） : https://github.com/mayuki/WeekRef.NET
+
+**由于笔者没有那么多时间对国内的一些文章进行整理，欢迎大家为《.NET周刊-国内文章》板块进行贡献，需要推广自己的文章或者框架、开源项目可以下方的项目地址提交Issue或者在我的微信公众号私信。**
+
+格式如下：
+
+* 10~50字左右的标题
+* 对应文章或项目网址访问链接
+* 200字以内的简介，如果太长会影响阅读体验
+
+https://github.com/InCerryGit/.NET-Weekly
+
+## .NET性能优化交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET性能优化经验的群组，主题包括但不限于：
+
+* 如何找到.NET性能瓶颈，如使用APM、dotnet tools等工具
+* .NET框架底层原理的实现，如垃圾回收器、JIT等等
+* 如何编写高性能的.NET代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET性能问题和宝贵的性能分析优化经验。**目前一群已满，现在开放二群。**
+
+如果提示已经达到200人，可以加我微信，我拉你进群: **ls1075**
+
+另外也创建了**QQ群**，群号: 687779078，欢迎大家加入。 
+
+![image-20230703203249615](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230703203249615.png)

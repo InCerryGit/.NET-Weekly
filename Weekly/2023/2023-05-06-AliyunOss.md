@@ -1,0 +1,314 @@
+## 国内文章
+
+### 聊一聊 Valgrind 监视非托管内存泄露和崩溃
+
+https://www.cnblogs.com/huangxincheng/p/17374315.html、
+
+只要是程序总会出现各种莫名其妙的问题，比如：非托管内存泄露，程序崩溃，在 Windows 平台上一般用微软自家的官方工具 `App Verifier` 就可以洞察，那问题出在 Linux 上怎么办呢？由于 Linux 崇尚自由，需要在各种牛鬼蛇神写的非官方开源软件中寻找一个比较靠谱的，比如本篇所说的 `Valgrind`。
+
+个人感觉 `Valgrind` 和 `App Verifer` 定位是差不多的，技术上前者使用 hook 钩子，后者使用仿真cpu，有点像 windbg 的 TTD 调试，具体信息参考：https://valgrind.org/
+
+### C#处理医学影像(四):基于Stitcher算法拼接人体全景脊柱骨骼影像
+
+https://www.cnblogs.com/Uncle-Joker/p/17373754.html
+
+在拍摄脊柱或胸片时，经常会遇到因设备高度不够需要分段拍摄的情况，对于影像科诊断查阅影像时希望将分段影像合并成一张影像，有助于更直观的观察病灶。
+
+### 聊一聊 GDB 调试程序时的几个实用命令
+
+https://www.cnblogs.com/huangxincheng/p/17371423.html
+
+用惯了宇宙第一的 Visual Studio 再用其他的开发工具还是有一点不习惯，不习惯在于想用的命令或者面板找不到，总的来说还是各有千秋吧，今天我们来聊一下几个在调试中比较实用的命令：
+
+- 查看内存
+- 硬件断点
+- 虚拟内存布局
+
+### 使用 Semantic Kernel 实现  Microsoft 365 Copilot 架构
+
+https://www.cnblogs.com/shanyou/p/17367521.html
+
+3月16日，微软发布了[微软365 Copilot](https://www.microsoft.com/en-us/microsoft-365/blog/2023/03/16/introducing-microsoft-365-copilot-a-whole-new-way-to-work/)[1]。 Microsoft 365 Copilot 将您现有的 Word、Excel、PowerPoint、Outlook 和 Teams 与大型语言模型 （LLM） 的强大功能以及来自 Microsoft Graph 和 Microsoft 365 应用的数据相结合，以创建前所未有的体验。正如您在官方视频中看到的那样，Microsoft 365 Copilot的核心是一个名为Copilot System的编排器。 今天Semantic Kernel 博客上发布了一篇文章介绍了[Copilot 聊天示例程序](https://devblogs.microsoft.com/semantic-kernel/announcing-copilot-chat/)[2]。 我认为很容易从这个Copilot 聊天示例程序开始 实现这样的一个架构。
+
+### ChatGPT Plugin 插件开发：基于 ASP.NET Core Minimal API
+
+https://www.cnblogs.com/savorboard/p/chatgpt-plugin.html
+
+这是一篇ChatGPT插件开发教程，描述如何使用 ASP.NET Core Minimal API 开发 ChatGPT 插件，以最简单的 Todo List 指导示例作为入门教程。
+
+这个Todo List插件主要功能是以自然语言的方式向ChatGPT发起指令，ChatGPT将根据合适的时机选择调用此插件。例如：我明天下午3点有一个会议，请帮我记录。此时 ChatGPT将会根据插件的元数据功能描述，然后选择调用插件，将明天下午3点有一个会议通过API记录到待办列表中。
+
+## 话题  
+
+### 【英文】介绍 Temporal .NET - .NET 中的确定性工作流编写  
+https://temporal.io/blog/introducing-temporal-dotnet  
+
+宣布 Temporal 工作流引擎支持 .NET。  
+
+文章介绍了用 C# 实现和调用工作流的代码示例以及相关机制等。  
+
+目前 .NET SDK 处于 Alpha 发布阶段，API 可能会发生变化，但所有功能都已实现，预计不久将发布 Beta 和 GA。  
+
+### 【英文】亚马逊网页服务推出 Bob's Used Books - 一个新的、真实的 .NET 示例应用程序  
+https://aws.amazon.com/jp/blogs/aws/introducing-bobs-used-books-a-new-real-world-net-sample-application/  
+
+AWS 发布了用 .NET 6 构建的名为 Bob's Used Books 的虚构二手书店电商网站示例应用程序。  
+
+该应用程序实现了电商网站的一系列功能，并作为使用 Amazon Web Service 各种服务的示例而创建。  
+
+未来计划准备部署到 App Runner 或 Amazon EKS 等内容。  
+
+### 【英文】在 VS Code 中宣布 .NET 移动调试。使用 Uno Platform 或 .NET MAUI 进行 VS Code 移动开发。  
+https://platform.uno/blog/announcing-net-mobile-debugging-in-vs-code-mobile-development-in-vs-code-with-uno-platform-or-net-maui/  
+
+Uno Platform 的 Visual Studio Code 扩展功能支持移动开发。  
+
+通过这个支持，可以在 Windows、macOS、Linux 上使用 Visual Studio Code 构建和调试 Uno Platform 和 .NET MAUI。  
+
+### 【英文】发布 2.2.6 · mysql-net/MySqlConnector  
+https://github.com/mysql-net/MySqlConnector/releases/tag/2.2.6  
+
+Async MySQL Connector 2.2.6 已发布。  
+
+包括在 TransactionScope 中回滚时由于死锁异常导致的内存泄漏问题等一些修复。  
+
+### 【英文】发布 2.6.111 · StackExchange/StackExchange.Redis  
+https://github.com/StackExchange/StackExchange.Redis/releases/tag/2.6.111  
+
+StackExchange.Redis 2.6.111 已发布。  
+
+包括使用 Envoy 代理时的多槽命令支持以及一些错误修复和改进。  
+
+### 【英文】发布发布 v2.53.0 · grpc/grpc-dotnet  
+https://github.com/grpc/grpc-dotnet/releases/tag/v2.53.0  
+
+gRPC (grpc-dotnet) v2.53.0 已发布。  
+
+包括错误消息的改进以及在 .NET 6 中启用修剪时的异常修复等一些修复。  
+
+### 【英文】Fleet 中的 C# 支持：解决方案视图、单元测试等！| .NET 工具博客  
+https://blog.jetbrains.com/dotnet/2023/05/04/csharp-support-in-fleet-solution-view-unit-testing-and-more/  
+
+JetBrains Fleet 的 C# 支持添加了解决方案视图和单元测试。  
+
+文章介绍了解决方案视图和单元测试相关功能以及多目标框架项目支持的改进、解决方案属性、快捷键映射的添加、执行配置更改的需要等。  
+
+### 【英文】Rider 2023.2 路线图 | .NET 工具博客  
+https://blog.jetbrains.com/dotnet/2023/05/03/rider-2023-2-roadmap/  
+
+JetBrains Rider 2023.2 的路线图。  
+
+- 语言支持和改进  
+- 重建构建工具窗口  
+- 新 UI  
+- 新解决方案向导  
+- 游戏开发  
+    - Unity  
+        - 继续支持 DOTS  
+        - UI Toolkit  
+        - 着色器  
+    - Unreal Engine  
+        - 性能改进  
+        - 调试  
+- 设置同步  
+- 其他改进  
+  
+### 【英文】ReSharper 2023.2 路线图 | .NET 工具博客  
+https://blog.jetbrains.com/dotnet/2023/05/03/resharper-2023-2-roadmap/  
+
+JetBrains ReSharper 2023.2 的路线图。  
+
+- 语言支持和改进  
+- 性能  
+- 预测性调试器  
+- 代码风格  
+  
+### 【英文】宣布支持 .NET MAUI 和 Azure Functions 的 .NET 升级助手的新版本！- .NET 博客  
+https://devblogs.microsoft.com/dotnet/upgrade-assistant-general-availability/  
+
+发布了 .NET Upgrade Assistant 的新版本。  
+
+该版本支持升级 .NET MAUI 和 Azure Functions。  
+
+- 支持 .NET 8  
+- 从 Xamarin.Forms 升级到 .NET MAUI  
+- 升级 Azure Functions  
+- 从 UWP 升级到 WinUI  
+- 支持 ARM64  
+  
+
+文章介绍了功能增强以及 .NET MAUI 和 Azure Functions 升级等方面的内容。  
+
+### 【英文】宣布 Copilot Chat | 语义内核  
+https://devblogs.microsoft.com/semantic-kernel/announcing-copilot-chat/  
+
+Semantic Kernel 添加了名为 Copilot Chat 的机制。  
+
+通过使用 Copilot Chat，可以将基于 LLM 的自定义聊天机器人集成到应用程序中。  
+
+## 文章、幻灯片等  
+### 【英文】使用 Blazor、SignalR 和 ApexCharts 实现实时图表  
+https://blog.genezini.com/p/real-time-charts-with-blazor-signalr-and-apexcharts/  
+
+关于使用 Blazor WebAssembly、SignalR 和 ApexCharts 实现实时图表应用程序的实现。  
+
+### 【英文】解锁 NuGet 的力量：.NET REST API 或微服务的必备软件包  
+https://levelup.gitconnected.com/unlock-the-power-of-nuget-essential-packages-for-net-rest-api-or-microservices-b1c25cfbdefa  
+
+介绍 .NET 服务器应用程序中常用的 NuGet 包的汇总。  
+
+### 【英文】在 ASP.NET Core Web 应用程序中运行 Vite  
+https://khalidabuhakmeh.com/running-vite-with-aspnet-core-web-applications  
+
+关于在 ASP.NET Core Web 应用程序中使用 Vite（如 TypeScript 等）进行前端开发的步骤。  
+
+### 【英文】在 ASP.NET Core 中上传大文件 - Code Maze  
+https://code-maze.com/aspnetcore-upload-large-files/  
+
+关于在 ASP.NET Core 中处理巨大文件上传的内容。  
+
+### 【英文】将 .NET 应用程序迁移到云端  
+https://www.infoq.com/presentations/net-apps-cloud/  
+
+关于将 .NET 应用程序迁移到云的会议记录。  
+
+涉及提升和转移、容器平台、云原生注意事项、无服务器计算和可移植性等。  
+
+### 【英文】JetBrains .NET Day Online 2023 - 演讲者征集 | .NET 工具博客  
+https://blog.jetbrains.com/dotnet/2023/05/04/jetbrains-net-day-online-2023-call-for-speakers/  
+
+关于 9 月 26 日举行的 JetBrains .NET Day Online 2023 演讲者征集的信息。(英语)  
+
+### 【日文】使用 Semantic Kernel 在 GTP-4 中实现聊天应用程序  
+https://zenn.dev/tomokusaba/articles/4fcc3f865036ad  
+
+关于如何使用 Blazor Server 和 Semantic Kernel 实现 Azure OpenAI Services 的 GPT-4 聊天应用程序。  
+
+### 【日文】自定义控件进行自由绘制（C# / WinUI 3）  
+https://zenn.dev/shinta0806/articles/custom-control-draw  
+
+关于在 WinUI 3 中实现自由绘制的自定义控件的方法。  
+
+### 【日文】使用 Postman 调试 SignalR  
+https://zenn.dev/satoppepper/articles/8bdcff559d6c86  
+
+关于使用 Postman 与 SignalR 通信的应用程序进行消息交互以进行调试的步骤。  
+
+### 【英文】Visual Studio 2022 中的 Web API 开发 - Visual Studio 博客  
+https://devblogs.microsoft.com/visualstudio/web-api-development-in-visual-studio-2022/  
+
+介绍了 Visual Studio 2022 版本 17.6 预览中增强的 Web API 开发功能  
+
+- 集成的 HTTP 编辑器客户端  
+- API 端点浏览器  
+- 脚手架  
+- Visual Studio 中的 Entity Framework 工具  
+  
+### 【日文】日本微软的大田先生 (@okazuki) 的 Semantic Kernel 文章  
+
+- [在 Semantic Kernel 中分割长文章并传递给技能以超越令牌的限制](https://zenn.dev/microsoft/articles/semantic-kernel-10)  
+- [Semantic Kernel 模板的编程渲染方法和模板语法](https://zenn.dev/microsoft/articles/semantic-kernel-7)  
+- [在 Semantic Kernel 中使用 Open AI 的 Embeddings（模糊搜索功能）](https://zenn.dev/microsoft/articles/semantic-kernel-8)  
+- [使用 Semantic Kernel 的规划器创建自主思考和执行解决方案的 AI](https://zenn.dev/microsoft/articles/semantic-kernel-6)  
+- [以类库形式共享自定义 Semantic Kernel 技能](https://zenn.dev/microsoft/articles/semantic-kernel-9)  
+- [尝试 Semantic Kernel 的本地技能](https://zenn.dev/microsoft/articles/semantic-kernel-3)  
+- [在 Semantic Kernel 中计算令牌](https://zenn.dev/microsoft/articles/semantic-kernel-5)  
+- [自定义 Semantic Kernel 技能（闲话）](https://zenn.dev/microsoft/articles/semantic-kernel-4)  
+  
+### 【英文】使用 C# .NET 进行 JWT 认证  
+https://dev.to/rmaurodev/jwt-authentication-with-c-net-1h4c  
+
+介绍了在 ASP.NET Core 中使用 JWT 进行 Bearer 认证的实现步骤。  
+
+### 【英文】.NET Annotated Monthly | 2023年5月 | .NET 工具博客  
+https://blog.jetbrains.com/dotnet/2023/05/02/net-annotated-monthly-may-2023/  
+
+JetBrains 提供的 3 月份 .NET 相关信息汇总。  
+
+### 【英文】在 iOS 16 上使用 .NET MAUI 和 Xamarin.Forms 运行时锁定方向  
+https://msicc.net/how-to-lock-orientation-at-runtime-on-ios-16-with-net-maui-and-xamarin-forms/  
+
+关于在 iOS 16 上的 .NET MAUI 和 Xamarin.Forms 应用程序如何在运行时锁定旋转的方法。  
+
+### 【英文】在 .NET Framework 中使用结构体时出现的 VerificationException  
+https://minidump.net/verificationexception-in-net-framework-when-using-structs-6269eb3df448  
+
+.NET Framework 中，将值类型设置为只读字段并在部分信任状态下运行时会抛出 VerificationException 的问题原因及解决方法。  
+
+- [VerificationException due to read-only struct use · Issue #27382 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/27382)  
+
+### 【英文】在单元测试中调用内部构造函数  
+https://haacked.com/archive/2023/05/01/calling-internal-ctors/  
+
+主要在单元测试中使用外部库等类型时，关于调用非公开构造函数的方法。  
+
+### 【日文】在 .netstandard 程序集中完全使用 .NET Framework 和 .NET 的 API  
+https://zenn.dev/benutomo/articles/3365c3dc61a9d3  
+
+关于从为 .NET Standard 构建的程序集中使用 .NET Framework 和 .NET (Core) 的 API 的方法。  
+
+采用为 .NET Standard 准备的构建入口，然后加载并调用各个运行时目标的程序集。  
+
+### 【英文】Figma 的 Uno Platform 预览 5：为设计师和开发者增强的功能  
+https://www.infoq.com/news/2023/04/uno-platform-figma-plugin-5/  
+
+介绍了 Uno Platform 针对 Figma 的插件预览版 5 中功能得到加强的地方。  
+
+## 深入研究  
+
+### EgorBo 提交的 SIMD 比较常量折叠拉取请求 · Pull Request #85584 · dotnet/runtime  
+https://github.com/dotnet/runtime/pull/85584  
+
+https://twitter.com/egorbo/status/1653014086534266881?s=12  
+
+SIMD 比较的常量折叠 PR。  
+
+![image-20230507101730436](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230507101730436.png)
+
+![image-20230507101636994](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230507101636994.png)
+
+### 在冻结段（非 GC 堆）上分配 Array.Empty · Pull Request #85559 · dotnet/runtime  
+https://github.com/dotnet/runtime/pull/85559  
+
+https://twitter.com/egorbo/status/1653716548517806080?s=12  
+
+`Array.Empty<T>` 对象将在与 GC 目标不同的段上分配。  
+
+![image-20230507101706804](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230507101706804.png)
+
+### 引入时间抽象 - .NET 8 预览 4 中的新功能 [WIP] · Issue #8234 · dotnet/core  
+https://github.com/dotnet/core/issues/8234#issuecomment-1530525108  
+
+https://twitter.com/ufcpp/status/1653208094888046593?s=12  
+
+时间相关的抽象化 API TimeProvider 将在 .NET 8 预览 4 中。
+
+## 版权声明
+
+* 国内板块由 InCerry 进行整理 : https://github.com/InCerryGit/WeekRef.NET
+* 其余内容来自 Myuki WeekRef，由InCerry翻译（已获得授权） : https://github.com/mayuki/WeekRef.NET
+
+**由于笔者没有那么多时间对国内的一些文章进行整理，欢迎大家为《.NET周报-国内文章》板块进行贡献，需要推广自己的文章或者框架、开源项目可以下方的项目地址提交Issue或者在我的微信公众号私信。**
+
+格式如下：
+
+* 10~50字左右的标题
+* 对应文章或项目网址访问链接
+* 200字以内的简介，如果太长会影响阅读体验
+
+https://github.com/InCerryGit/.NET-Weekly
+
+## .NET性能优化交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET性能优化经验的群组，主题包括但不限于：
+
+* 如何找到.NET性能瓶颈，如使用APM、dotnet tools等工具
+* .NET框架底层原理的实现，如垃圾回收器、JIT等等
+* 如何编写高性能的.NET代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET性能问题和宝贵的性能分析优化经验。**目前一群已满，现在开放二群。**
+
+如果提示已经达到200人，可以加我微信，我拉你进群: **ls1075**
+
+另外也创建了**QQ群**，群号: 687779078，欢迎大家加入。  
+

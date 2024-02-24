@@ -1,0 +1,263 @@
+## 国内文章
+
+### XUnit数据共享与并行测试
+
+https://www.cnblogs.com/podolski/p/17388602.html
+
+在单元或者集成测试的过程中，需要测试的用例非常多，如果测试是一条一条过，那么需要花费不少的时间。从 V2 开始，默认情况下 XUnit 自动配置并行（[参考资料](https://xunit.net/docs/running-tests-in-parallel)），大大提升了测试速度。本文将对 `ASP.NET CORE WEBAPI` 程序进行集成测试，并探讨 XUnit 的数据共享与测试并行的方法。
+
+### 在 ASP.NET Core Web API 中处理 Patch 请求
+
+https://www.cnblogs.com/alby/p/Patch-in-ASP-NET-Core-web-API.html
+
+在 ASP.NET Core Web API 中，由于 C# 是一种静态语言(`dynamic` 在此不表)，当我们定义了一个类型用于接收 HTTP Patch 请求参数的时候，在 `Action` 中无法直接从实例中得知客户端提供了哪些参数。
+
+### 记一次 某智能制造MES系统CPU 爆高分析
+
+https://www.cnblogs.com/huangxincheng/p/17395212.html
+
+前段时间有位朋友找到我，说他 docker 中的web服务深夜cpu被打满，让我帮忙看一下，很多朋友问docker中怎么抓dump，我一般都推荐使用 `procdump` 这款自动化工具，谁用谁知道，有了 dump 之后，接下来就是分析了。
+
+### 推荐一个.Ner Core开发的配置中心开源项目
+
+https://www.cnblogs.com/chingho/p/17110126.html
+
+当你把单体应用改造为微服务架构，相应的配置文件，也会被分割，被分散到各个节点。这个时候就会产生一个问题，配置信息是分散的、冗余的，变成不好维护管理。这个时候我们就需要把配置信息独立出来，成立一个配置中心。这是一个基于.Net Core开发的，轻量级配置中心、部署使用简单方便。该项目只具备必要的功能，主要用于轻量级的项目。
+
+### C#使用词嵌入向量与向量数据库为大语言模型(LLM)赋能长期记忆实现私域问答机器人落地
+
+https://www.cnblogs.com/gmmy/p/17385868.html
+
+本文将探讨如何使用C#开发基于大语言模型的私域聊天机器人落地。大语言模型（Large Language Model，LLM 这里主要以ChatGPT为代表的的文本生成式人工智能）是一种利用深度学习方法训练的能够生成人类语言的模型。这种模型可以处理大量的文本数据，并学习从中获得的模式，以预测在给定的文本上下文中最可能出现的下一个词。 在一般场景下LLM可以理解用户提出的问题并生成相应的回答。然而由于其训练时的数据限制LLM无法处理特定领域的问题。因此我们需要探索一种方法让LLM能够获取并利用长期记忆来提高问答机器人的效果。
+
+### 聊一聊 dotnet-trace 调查 lock锁竞争
+
+https://www.cnblogs.com/huangxincheng/p/17384543.html
+
+最近在分析一个 linux 上的 dump，最后的诱因是大量的lock锁诱发的高频上下文切换，虽然问题告一段落，但我还想知道一点信息，所谓的高频到底有多高频？锁竞争到底是一个怎样的锁竞争？ 如果了解这些信息对我们后续分析此类问题非常有帮助。
+
+###  如何将C#在线编辑器嵌入自己项目
+
+https://www.cnblogs.com/hejiale010426/p/17380575.html
+
+首先我们需要介绍一下这个在线编辑器，当前的在线编辑器支持c#的代码编译运行，并且无需后台服务，基于`WebAssembly`实现的在浏览器端去执行我们的`c#`代码，基于`Roslyn`提供的`Api`封装一套简单的编译，并且封装了`js`的支持，让嵌入的方式更简单。
+
+### C#异步有多少种实现方式？
+
+https://www.cnblogs.com/Can-daydayup/p/17383651.html
+
+微信群里的一个提问引发的这个问题，有同学问：C#异步有多少种实现方式？想要知道C#异步有多少种实现方式，首先我们要知道.NET提供的执行异步操作的三种模式，然后再去了解C#异步实现的方式。
+
+## 主题
+
+### 【英文】发布 v1.3.1 microsoft/WindowsAppSDK
+https://github.com/microsoft/WindowsAppSDK/releases/tag/v1.3.1
+
+Windows App SDK v1.3.1 发布。
+
+此版本包括一些崩溃问题的修复、模板更新等。
+
+- [版本 1.3.1 (1.3.230502000) - Windows 应用程序 SDK - Windows 应用程序的稳定通道发行说明](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/稳定通道#version-131-13230502000)
+
+
+### 【英文】Visual Studio UI 刷新 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/visual-studio-ui-refresh/
+
+宣布更新 Visual Studio 用户界面的计划。
+
+未来，我们计划更新 Visual Studio 的 UI 以符合 Fluent Design，分享当前的设计方案并接收反馈。
+
+- [有关 Visual Studio UI 刷新的反馈 - 开发人员社区](https://developercommunity.visualstudio.com/t/Feedback-on-the-Visual-Studio-UI-Refresh/10351411)
+
+### 【英文】即将在 Windows 更新和目录上提供 .NET Framework 4.8.1 - .NET 博客
+https://devblogs.microsoft.com/dotnet/upcoming-availability-of-net-framework-4-8-1-on-windows-update-and-catalog/
+
+宣布可从 Windows 更新和 Windows 更新目录获取 .NET Framework 4.8.1。
+
+.NET Framework 4.8.1 将在未来几周内从 Windows Update 和 Windows Update Catalog 中提供。交付将从 Windows Insider Preview 的 Release Preview 推出。
+
+文章包括下载说明、语言包、阻止自动更新和常见问题解答。
+
+## 文章、幻灯片等
+### 【日文】使用 Azure.AI.OpenAI 包连接到 OpenAI 和 Azure OpenAI 服务的区别
+https://zenn.dev/microsoft/articles/howtouser-azure-ai-openai
+
+Azure.AI.OpenAI NuGet 包同时支持 OpenAI API 和 Azure OpenAI Service，但在配置使用时存在一些差异。
+
+### 【英文】使用 Polyglot Notebooks 和 SandDance 在 dotnet 中可视化数据
+https://dev.to/integerman/visualizing-data-in-dotnet-with-polyglot-notebooks-and-sanddance-55k9
+
+了解如何通过 C# 代码在 Polyglot Notebooks 中使用数据可视化库 SandDance。
+
+### 【英文】通过快速工程升级您的 GPT 游戏 - .NET 博客
+https://devblogs.microsoft.com/dotnet/gpt-prompt-engineering-openai-azure-dotnet/
+
+关于在调用 OpenAI 的 ChatGPT 时有帮助的提示工程。
+
+### 【英文】加入我们的 HackTogether：Microsoft Teams Global Hack - .NET 博客
+https://devblogs.microsoft.com/dotnet/hacktogether-microsoft-teams-global-hack/
+
+关于 Microsoft Teams 虚拟黑客马拉松活动。
+
+6 月 1 日以主题演讲开始的活动将在 15 日之前制定和提交。将准备几个部委，并为获奖者颁发奖品。
+
+### 【日文】我想用.NET的option pattern验证设置是否正确
+https://zenn.dev/microsoft/articles/options-pattern-validation
+
+关于如何使用 Microsoft.Extensions.Options（包括 ASP.NET Core）通过选项模式验证设置值。
+
+本文介绍了如何使用 Microsoft.Extensions.Options.DataAnnotations 通过 DataAnnotations 进行验证。
+
+### 【日文】如何使用 EF Core 正确更新 - Qiita
+https://qiita.com/jun1s/items/3e2b3702a965bb5e2705
+
+如何从分离的实体更新，如何从分离的实体更新，以及如何在 Entity Framework Core 中错误地使用 Update 方法。
+
+### 【英文】环绕选择实验 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/surround-selection-experiment/
+
+关于实现围绕选择范围输入的功能。
+
+我们在实际将它们合并到产品中之前提供实验性扩展，验证它们可以应用于所有语言，并征求反馈。
+
+- [环绕声 - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.Surrounder)
+
+### 【英文】ASP.NET Core 7.0 中的 API 版本控制和 Swagger
+https://mohsen.es/api-versioning-and-swagger-in-asp-net-core-7-0-fe45f67d8419
+
+在 ASP.NET Core 中提供版本化的 API，并说明使 Swagger 与 Bearer 身份验证结合使用的过程。
+
+### 【英文】2019-2022 年 10 大 C# 会议演讲
+https://unicorn-dev.medium.com/top-10-c-conference-talks-2019-2022-78c049b2d6e9
+
+2019 年至 2022 年 10 场 C# 相关会议。
+
+### 【英文】如何在展示代码时像专家一样使用 Visual Studio
+https://dev.to/this-is-learning/how-to-use-visual-studio-like-a-pro-when-presenting-your-code-5955
+
+如何提供在演示文稿中使用 Visual Studio 的模式。
+
+### 【英文】.NET 中的现代最小工作者 | Anthony Simon
+https://anthonysimmon.com/dotnet-minimal-workers/
+
+如何使用通用主机和顶级语句实现 Worker 类型的应用程序。
+
+### 【日文】语义内核 v0.13.442.1-preview 发布
+https://zenn.dev/microsoft/articles/semantic-kernel-12
+
+关于语义内核 v0.13.442.1-preview 中的更新。
+
+关于 gRPC 可以作为一项技能加载，Azure 认知搜索可以用作语义记忆，完成流支持等。
+
+### 【英文】如何开始使用 .NET 后台服务 | .NET 工具博客
+https://blog.jetbrains.com/dotnet/2023/05/09/dotnet-background-services/
+
+关于如何开始开发在通用主机后台处理的 BackgroundService。
+
+
+### 【英文】.NET MAUI WebViews：如何全屏播放视频
+https://dev.to/vhugogarcia/net-maui-webviews-how-to-play-videos-in-full-screen-1j03
+
+如何在 .NET MAUI 中使用 Android WebView 进行全屏视频播放。
+
+### 【英文】如何在 .NET 中使用 WinSCP 从安全 FTP 服务器 (SFTP) 下载文件
+https://juldhais.net/how-to-download-files-from-secure-ftp-server-sftp-using-winscp-in-net-895fbb44362c
+
+如何使用 WinSCP 的 .NET 脚本库从 SFTP 服务器下载文件。
+
+### 寻找.NET中的内存泄漏
+https://chnasarre.medium.com/raiders-of-the-lost-root-looking-for-memory-leaks-in-net-28febafebac1
+
+如何使用 C++ Profiler API 跟踪对象引用并查找内存泄漏。
+
+### 【英文】面向 C# 开发人员：defer 不是 IDisposable
+https://blog.cellfish.se/2023/05/go-for-c-developers-defer-is-not.html
+
+关于Go的defer和C#的IDisposable(using)的区别。乍一看，这似乎是一种误解，但 defer 是函数作用域的。
+
+### 【英文】阅读 .NET 中 exe 的 Windows 应用程序清单 - Gérald Barré
+https://www.meziantou.net/reading-windows-application-manifest-of-an-exe-in-dotnet.htm
+
+如何使用 Win32 API 读取可执行 (.exe) 文件的清单文件。
+
+### 【日文】从 C# 开始的并行化：目录
+https://zenn.dev/k_taro56/articles/vetcorized-csharp-introduction
+
+关于使用 SIMD 进行并行化的系列文章。
+
+- [从C#开始的并行化：数组求和](https://zenn.dev/k_taro56/articles/vetcorized-csharp-array-summation)
+
+## 活动
+
+### .NET 实验室学习会议 2023 年 5 月 - connpass
+https://dotnetlab.connpass.com/event/281932/
+
+在线学习会议将于 5 月 27 日星期六举行。
+
+- 使用 Tanzu Application Platform 和 Azure Spring Apps 提高微服务应用程序开发的敏捷性
+- C# 的 async/await 是如何工作的
+- 首次使用 C# 和 Unity 开发游戏
+- 尝试将 Azure OpenAI 服务的 GTP-4 与语义内核 (C#) 结合使用## 库、存储库、工具等。
+### ChatGPT API 客户端应用“TmCGPT Debugger”v2.0-beta
+https://zenn.dev/jun_murakami/articles/a5ca626eb8204b
+
+在 Avalonia UI 中实现的 ChatGPT API 客户端。
+
+## 站点、文档等
+### 推文
+
+**.NET 8 中的一种托管堆。**
+
+https://twitter.com/egorbo/status/1657007196171902976?s=12
+
+![image-20230516085411045](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230516085411045.png)
+
+---
+
+**添加了 Visual Studio 支持的 .http 文件的文档。**
+
+https://twitter.com/sayedihashimi/status/1656751184697339905?s=12
+
+![image-20230516085435336](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230516085435336.png)
+
+![image-20230516085513060](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230516085513060.png)
+
+## 深入探索
+
+### 通过 jkotas Pull Request 删除 Windows arm32 支持 #86065 dotnet/runtime
+https://github.com/dotnet/runtime/pull/86065
+
+在 Windows 上删除 ARM32 支持的 PR，它在 .NET 6 及更早版本中已弃用。
+
+https://twitter.com/egorbo/status/1656456755835027457?s=12
+
+![image-20230516124417623](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/image-20230516124417623.png)
+
+## 版权声明
+
+* 国内板块由 InCerry 进行整理 : https://github.com/InCerryGit/WeekRef.NET
+* 其余内容来自 Myuki WeekRef，由InCerry翻译（已获得授权） : https://github.com/mayuki/WeekRef.NET
+
+**由于笔者没有那么多时间对国内的一些文章进行整理，欢迎大家为《.NET周报-国内文章》板块进行贡献，需要推广自己的文章或者框架、开源项目可以下方的项目地址提交Issue或者在我的微信公众号私信。**
+
+格式如下：
+
+* 10~50字左右的标题
+* 对应文章或项目网址访问链接
+* 200字以内的简介，如果太长会影响阅读体验
+
+https://github.com/InCerryGit/.NET-Weekly
+
+## .NET性能优化交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET性能优化经验的群组，主题包括但不限于：
+
+* 如何找到.NET性能瓶颈，如使用APM、dotnet tools等工具
+* .NET框架底层原理的实现，如垃圾回收器、JIT等等
+* 如何编写高性能的.NET代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET性能问题和宝贵的性能分析优化经验。**目前一群已满，现在开放二群。**
+
+如果提示已经达到200人，可以加我微信，我拉你进群: **ls1075**
+
+另外也创建了**QQ群**，群号: 264167610，欢迎大家加入。
