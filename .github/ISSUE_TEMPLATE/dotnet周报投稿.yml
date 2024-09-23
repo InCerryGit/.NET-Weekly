@@ -10,7 +10,7 @@ body:
       placeholder: 10-50字以内
     validations:
       required: true
-      
+
   - type: textarea
     id: link
     attributes:
@@ -19,7 +19,7 @@ body:
       placeholder: "如：https://github.com/InCerryGit/.NET-Weekly"
     validations:
       required: true
-      
+
   - type: textarea
     id: description
     attributes:
@@ -28,7 +28,7 @@ body:
       placeholder: 50-200字之间
     validations:
       required: true
-      
+
   - type: checkboxes
     id: terms
     attributes:
