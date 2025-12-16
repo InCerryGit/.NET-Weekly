@@ -1,0 +1,341 @@
+## 国内文章
+### 微软正式发布 .NET 10：三年 LTS 支持驱动性能革命与 AI 原生开发新纪元
+
+https://www.cnblogs.com/shanyou/p/19212112
+
+.NET 10于2025年11月12日发布。这是一个长期支持版本，提供三年技术支持。新版本在运行时性能、AI/ML集成和跨平台兼容性上取得重要进展。其性能提升显著，JIT编译速度提高37.5%，GC暂停时间减少52%。C# 14简化编程，通过自动生成私有字段和扩展属性提升开发效率。ASP.NET Core在Blazor上有重大改进，如声明式状态持久化和优化的表单验证。
+
+### .NET 10性能突破：持续优化才是质变关键
+
+https://www.cnblogs.com/luojin765/p/19214674
+
+.NET 10于2025年11月12日发布，作为长期支持版本，将提供三年安全补丁和服务支持。其性能提升依赖数百个微小优化，并实现了从LINQ到线程池的全方面突破。LINQ优化体现了从机械执行到语义理解的转变，极大提升了查询效率。这种创新方法改变了算法时间复杂度，代表了技术演进的核心理念，展现了持续的系统性优化的重要性。在基准测试中也显示了显著的性能改善。
+
+### DotNetGuide 突破了 9.5K + Star，一份全面的C#/.NET/.NET Core学习、工作、面试指南知识库！
+
+https://www.cnblogs.com/Can-daydayup/p/19211834
+
+DotNetGuide是一个侧重于C#、.NET和.NET Core学习与工作指南的GitHub知识库。内容包括基础知识、学习路线、实战经验、编程技巧、面试准备和资料推荐等。知识库旨在帮助开发者快速掌握技术，找到清晰的学习路径，提升核心竞争力。同时也鼓励社区参与和贡献资源，保持内容的持续更新。此知识库关注C#/.NET/.NET Core技术的前沿动态，提供学习视频和优秀项目框架的信息。
+
+### 从 .NET Core1.0 到 .NET 10：.NET + C# 演进全景
+
+https://www.cnblogs.com/chenyishi/p/19219260
+
+本文回顾了微软 .NET 与 C# 语言的发展历程，涵盖了从跨平台到统一平台及现代化性能优化的各个版本。重点介绍了每个版本的发布信息和核心特性，以示例代码帮助开发者理解关键变化，促进特性应用。作者详细阐述了 .NET Core 1.x 到 .NET 5 的核心特性，比如可空引用类型和记录类型等。这些内容对于开发者的实际应用具有很高的参考价值，增强了对 .NET 技术的认识。
+
+### 如何在 .NET 中使用 SIMD
+
+https://www.cnblogs.com/eventhorizon/p/19214931
+
+本文介绍了单指令多数据(SIMD)技术，阐述其基础原理及实现方法。与传统逐元素计算相比，SIMD通过并行处理提高了计算效率，适用于数组运算等场景。文中使用C#代码展示了SIMD在数组加法中的应用，比较了常规和SIMD优化的方法的性能差异。文章涵盖了相关命名空间及数据结构，如System.Runtime.Intrinsics与Vector等，为开发者在跨平台计算中提供了实用的示例与指导。
+
+### WPF 如何支撑一个灵活的流程图编辑器？
+
+https://www.cnblogs.com/1312mn/p/19204464
+
+本文介绍了一款基于WPF的开源流程节点编辑框架，强调流程设计与可视化在软件开发中的重要性。该工具支持节点创建与编辑、连线管理、布局调整与边界扩展、框选与拖动、数据绑定与交互等功能，旨在提升开发效率。框架遵循MVVM设计模式，具有友好的界面，强大的扩展性以及丰富的交互方式，能够满足不同开发需求。本文还提供了一段示例代码，展示关键功能的实现细节，为开发者提供实用的参考材料。
+
+### 好消息，.NET 10 正式发布，更智能、更安全、更高性能的统一开发平台！
+
+https://www.cnblogs.com/Can-daydayup/p/19219796
+
+.NET 10 于2025年11月11日正式发布，是最高效和最安全的版本，支持三年，建议升级以享受更好的性能和新功能。 .NET 10 引入了多项性能优化，包括JIT编译器和NativeAOT改进。C# 14 增强了开发效率，支持新特性如字段支持的属性和Lambda参数修饰符。ASP.NET Core 10.0 新增功能包括Blazor和OpenAPI等改进，并更新了.NET库以增强安全性和效率。此外，Microsoft代理框架简化了AI驱动应用的构建。
+
+### 鸡肋的TaskFactory是时候抛弃了
+
+https://www.cnblogs.com/xiangji/p/19205850
+
+本文介绍了TaskFactory和Task.Run的使用，分别生成并执行Task。使用Task.Factory.StartNew可以异步执行多个任务，展示了其在耗时操作中的效率。在实例中，三个任务同时执行，整体耗时约1秒。Task.Run功能类似，但为静态方法，设计上更为简洁且支持异步处理。同时，作者提到TaskFactory不支持某些异步特性，使用上存在局限。整体内容明确且详实，适合C#开发者参考。
+
+### 告别人工干预！C# 轻量级上位机自动联动 MES 与视觉检测
+
+https://www.cnblogs.com/1312mn/p/19208493
+
+本文介绍了一个基于 .NET 的工业自动化项目，旨在高效连接扫码枪与企业信息系统。项目要求实时、可靠且可追溯，使用 WinForm 构建结合串口和 TCP 通信的闭环控制系统。应用程序监听扫码枪，验证条码，调用 MES 接口获取信息，并将结果发送给视觉检测系统。系统具备良好的用户体验，实施一件一检的流程控制，并优化了重复零件号的处理。项目技术栈包括 .NET Framework、HttpClient、TcpClientManager 等，确保数据交互的安全性及日志系统可读性。
+
+### .NET Conf China 2025：讲师与主题全揭秘
+
+https://www.cnblogs.com/shanyou/p/19219790
+
+.NET Conf China 2025将于11月30日在上海举行，主题涵盖性能提升、AI融合和跨平台开发。多位讲师分享前沿技术，如SnapDevelop、EazyDevelop、Blazor和AVALONIA等。在AI与低代码结合方面，卢思达探讨高效开发的新范式。谢智介绍一站式AI云服务平台。此外，演讲者讨论.NET程序故障动态跟踪和AI应用可观测性等议题。大会为开发者提供学习与交流的机会，推动开源技术与社区协作发展。
+
+### 记一次 .NET 某医联体管理系统 崩溃分析
+
+https://www.cnblogs.com/huangxincheng/p/19214907
+
+这篇文章讲述了一起崩溃类的生产事故。作者通过分析dump文件，定位到崩溃信息和错误代码，发现是ntheap损坏造成的。作者使用调试命令查看崩溃时的调用栈，进一步揭示了崩溃原因。文章通过具体操作展示了崩溃分析的过程，让人对故障排除有了清晰的认识。
+
+### 一个基于 .NET 8 + DDD 搭建的模块化微服务框架
+
+https://www.cnblogs.com/Can-daydayup/p/19223919
+
+NetCoreKevin是一个基于.NET 8和DDD的模块化微服务框架，适合大型企业级应用开发。它提供了单点登录、缓存、任务自动化、分布式架构、多租户、日志记录等功能。DDD通过建立领域模型，帮助理解业务逻辑，从而实现可维护和可扩展的软件系统。此外，该项目源代码已开源，鼓励开发者参与。它还被收录在优秀的C#/.NET项目精选中，便于开发者了解最新动态和最佳实践。
+
+### C#/.NET/.NET Core技术前沿周刊 | 第 60 期(2025年11.1-11.9)
+
+https://www.cnblogs.com/Can-daydayup/p/19208114
+
+本周刊专注C#/.NET/.NET Core领域，记录最新的技术文章和资源。内容涵盖优秀项目、Visual Studio使用技巧、术语集、开源工具、ASP.NET Core的部署进化、C#高级模式等，提供详细的功能介绍和源码链接，为开发者提供有用的参考。文章旨在促进开发者提升效率，拓宽技术视野，适合初学者与经验丰富者。
+
+### .NET+AI | MEAI | .NET 平台的 AI 底座 (1)
+
+https://www.cnblogs.com/sheng-jie/p/19219744
+
+.NET 平台 AI 生态发展时间线展示了微软从基础服务集成到高级智能体编排的完整技术栈，涵盖了 Microsoft.Extensions.AI、Semantic Kernel 和 Microsoft Agent Framework 等技术。即将发布的.NET 10 将在底层性能和工具链上为 AI 深度优化。本文面向 .NET 开发者，介绍了如何在 AI 浪潮中抓住机遇，并启动了 [.NET+AI] 系列文章，旨在帮助开发者开展智能体开发。Microsoft.Extensions.AI 提供统一的接口标准，支持多种 AI 服务的接入，简化开发流程。
+
+### ASP.NET Core Blazor进阶1：高级组件开发
+
+https://www.cnblogs.com/shenchuanchao/p/19206324
+
+本文深入探讨Blazor中的高级组件开发技术，重点介绍了渲染片段、动态组件、错误边界和虚拟化组件。这些技术有助于构建更强大和灵活的Blazor应用。首先，文章解释了RenderFragment的基本概念和用法，展示了如何通过参数化的方式传递内容和显示动态列表。示例代码清晰地说明了各个组件的实现，增强了理解和应用能力。通过实用案例，读者可以更好地掌握Blazor组件的开发技巧。
+
+### DotMemory系列：1. 终结队列积压引发的内存暴涨分析
+
+https://www.cnblogs.com/huangxincheng/p/19220465
+
+本文介绍了使用DotMemory工具分析内存暴涨的案例。作者通过故意让终结器线程处理变慢，以演示终结队列的积压问题。提供了相关代码示例，并详细描述了DotMemory的使用方法与分析步骤。文章指出，在采样分析中，选择Sampled模式是关键，并展示了内存用量动态变化的快照，以及如何识别问题对象的大小。整体上，文章通过实例阐明了内存管理的重要性和DotMemory的可视化优势。
+
+### Aspire+.NET10+手搓线程池打造抓不死的云应用
+
+https://www.cnblogs.com/xiangji/p/19227175
+
+本文介绍了手搓线程池在.NET10中的支持，涉及环境准备以及如何快速开发云应用。作者展示了如何创建WeatherApi项目，通过IWeatherService读取天气数据并使用MySql数据库存储。文章提供了代码示例，包括Controller和接口定义，强调了Dapper在IWeatherService实现中的重要性，特别提到CancellationToken的使用。整体内容清晰，具有一定的实践性与技术深度，对开发者有参考价值。
+
+### .NET+AI | MEAI | 提示工程基础(2)
+
+https://www.cnblogs.com/sheng-jie/p/19220303
+
+本文介绍了如何使用Microsoft.Extensions.AI(MEAI)构建铁路票务的意图识别系统。文章强调了结构化提示的四大组件，包括指令、上下文、输入和输出。作者提供了七大核心技巧来提升提示质量，包括明确任务边界、结构化输出和角色设定。使用示例和参数调优，本文展示了如何提高模型准确性和系统集成效率。文章系统地讲解了业务需求、具体场景以及具体实施方法，帮助读者快速掌握实际应用。整体结构清晰，易于理解。总体而言，该文具有较强的实用性和参考价值。
+
+### 常用设计模式：模板方法模式
+
+https://www.cnblogs.com/guangzan/p/19222703
+
+模板方法模式是一种行为型设计模式，定义算法骨架，将具体步骤延迟到子类实现。它通过抽象类定义模板方法和抽象步骤，具体子类实现这些步骤。优点是代码复用和易扩展，缺点是子类过多时会增加复杂性。文中提供了C#和TypeScript的示例，演示饮料冲泡流程，包括咖啡和茶的实现。模板方法保证了固定流程，同时允许子类定制个别步骤，增强了灵活性和可维护性。
+
+### CompletableFuture的5大坑！
+
+https://www.cnblogs.com/12lisu/p/19216660
+
+本文讨论CompletableFuture在并发编程中的使用，特别是常见的坑与误区。作者指出，虽然CompletableFuture提供了强大的异步编程功能，但不当使用会导致性能问题，比如线程池配置不当。文中结合示例代码演示了如何进行异步计算，并警示读者注意默认线程池的局限性，特别是在IO密集型任务中，可能会造成任务过度排队。本篇文章旨在帮助读者避免这些常见错误，提高使用效率。
+
+### 记一次 .NET 某理财管理客户端 OOM溢出分析
+
+https://www.cnblogs.com/huangxincheng/p/19217608
+
+本文探讨了一名学员遇到的OOM异常问题，通过分析dump文件来识别错误原因。作者强调尽早捕获异常的重要性，并使用procdump工具获取dump文件。分析显示，程序因内存不足而导致抛出异常，文中提供了详细的异常调用栈，以帮助理解问题发生的背景和过程。该分析包含技术细节和实用指导，对于开发者理解和解决类似问题有很大帮助。
+
+### DotMemory系列：2. 事件泄露引发的内存暴涨分析
+
+https://www.cnblogs.com/huangxincheng/p/19224329
+
+本文探讨通过DotMemory分析内存泄露现象。讲述了在特定代码执行后，内存暴涨至1.15G的情况。通过使用DotMemory采集快照，确认EventHandler和Room类实例的内存占用是导致泄露的主要原因。分析显示，这些实例未能正确解订阅事件，造成内存持续占用。文章详细阐述了问题背景、代码示例和内存检测结果，提升了读者对内存管理的理解。
+
+### DotMemory系列：3. 堆碎片化引发的内存暴涨分析
+
+https://www.cnblogs.com/huangxincheng/p/19227185
+
+本文讨论了.NET8中的内存暴涨问题，重点在于通过示例代码展示如何导致堆碎片化。作者通过设计一个分配3M临时对象和一个50K pinned对象的案例，展示了内存的异常使用情况。尽管分配的对象不大，gen2却占用了大量内存，形成了堆碎片化。在分析中，作者通过dotMemory工具观察对象分布和内存使用情况，强调了pinned对象对垃圾回收的影响。总之，文章深入探讨了内存管理的重要性及其对性能的影响，为读者提供了宝贵的实践经验。
+
+### OpenCVSharp：使用 MOG(Mixture of Gaussians，高斯混合模型)算法来从视频流中分离前景和背景
+
+https://www.cnblogs.com/mingupupu/p/19225434
+
+本文介绍了如何使用MOG算法在视频流中分离前景与背景。通过示例代码，读者学习如何使用OpenCVSharp中的VideoCapture类和BackgroundSubtractorMOG类。代码展示了如何捕获视频帧并应用背景减法，提取出运动物体。MOG算法利用高斯混合模型实现背景建模，提供了有效的分离功能。初学者可以快速掌握这些基本概念，进一步探索计算机视觉技术的应用。
+
+### 使用WiX创建Windows应用安装包
+
+https://www.cnblogs.com/yada/p/19215267
+
+WiX工具集用于构建Windows安装程序，包括创建IIS网站和注册Windows防火墙例外。安装WiX可以通过命令行或Visual Studio进行。使用HeatWave扩展可生成MSI Package项目，包含多个关键文件。Package.wxs是核心，定义了MSI的属性，如ID、名称和版本。MajorUpgrade元素管理版本升级，设置相关权限。Feature元素控制安装内容，引用ComponentGroup。此文档清晰介绍了WiX基本用法，适合开发者参考。
+
+### OpenCVSharp：ArUco 标记检测与透视变换
+
+https://www.cnblogs.com/mingupupu/p/19219404
+
+本文介绍了如何在.NET环境中使用OpenCVSharp库进行Aruco标记检测和透视变换。推荐初学者从示例代码入手，通过运行示例了解基本功能。文章详细解释了每个参数的作用，包括检测器参数和字典配置，强调了学习中的实践重要性。作者鼓励读者逐步深入，不必一开始就掌握复杂的视觉算法原理，避免因难度而放弃。整体内容技术性强、实用性高，适合.NET开发者入门OpenCV。
+
+### 【EF Core】未定义实体类的数据库模型
+
+https://www.cnblogs.com/tcjiaan/p/19227431
+
+这篇文章探索了如何在 EF Core 中不定义实体类而实现数据库建模和操作。尽管通常不推荐这样做，但在某些情况下如数据库视图，这种方法是可行的。作者展示了如何通过自定义 DbContext 配置模型，使用字典类型作为默认结构，并添加属性和主键。文章提供了代码示例，展示了如何创建和验证模型，最终能够成功创建数据库。这说明 EF Core 在灵活性和适应性上的优势。
+
+### 在抖音直播推广开源作品的可行性？
+
+https://www.cnblogs.com/fanliang11/p/19228989
+
+该文章介绍了作者在.NET微服务领域的探索与实践，特别是对DotNetty框架的使用和维护经历。作者讲述了内存泄漏问题的解决以及物联网平台Kayak的稳定性。随着DotNetty维护的结束，作者表示仍会继续使用并扩展该框架的功能。同时，作者计划通过抖音直播推广物联网及微服务相关技术，分享经验并引发讨论。文章展示了个人技术成长和对开源社区的贡献。
+
+## 话题
+
+### 介绍 C# 14 - .NET 博客
+https://devblogs.microsoft.com/dotnet/introducing-csharp-14/
+
+### 介绍 F# 10 - .NET 博客
+https://devblogs.microsoft.com/dotnet/introducing-fsharp-10/
+
+### .NET 中的后量子密码学 - .NET 博客
+https://devblogs.microsoft.com/dotnet/post-quantum-cryptography-in-dotnet/
+
+### Uno 平台 6.4：代理开发、.NET 10 和 VS 2026 来了！
+https://platform.uno/blog/uno-platform-6-4/
+
+- [介绍 Uno 平台 Studio 2.0 – 与 AI 构建！](https://platform.uno/blog/uno-platform-studio-2-0/)
+
+### 更多关于ReSharper和Rider 2025.3的更新和修复 | .NET 工具博客
+https://blog.jetbrains.com/dotnet/2025/11/20/resharper-rider-2025-3-0-2/
+
+### 重新定义.NET的构建与发布方式(再次)——.NET博客
+https://devblogs.microsoft.com/dotnet/reinventing-how-dotnet-builds-and-ships-again/
+
+### OpenAPI.NET：有史以来最大的更新——OpenAPI at Microsoft
+https://devblogs.microsoft.com/openapi/openapi-net-release-announcements/
+
+### Heroku 对 .NET 10 LTS 的支持：开发者需要了解的内容
+https://www.heroku.com/blog/support-for-dotnet-10-lts-what-developers-need-know/
+
+## 发布
+- [AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia)
+    - [11.3.9](https://github.com/AvaloniaUI/Avalonia/releases/tag/11.3.9)
+- [aws/aws-sdk-net](https://github.com/aws/aws-sdk-net)
+    - [3.7.1165.0](https://github.com/aws/aws-sdk-net/releases/tag/3.7.1165.0)，[3.7.1166.0](https://github.com/aws/aws-sdk-net/releases/tag/3.7.1166.0)，[3.7.1167。 0](https://github.com/aws/aws-sdk-net/releases/tag/3.7.1167.0)， [3.7.1168.0](https://github.com/aws/aws-sdk-net/releases/tag/3.7.1168.0)， [3.7.1169. 0](https://github.com/aws/aws-sdk-net/releases/tag/3.7.1169.0)， [3.7.1170.0](https://github.com/aws/aws-sdk-net/releases/tag/3.7.1170.0)， [4.0.133.0]( https://github.com/aws/aws-sdk-net/releases/tag/4.0.133.0)， [4.0.134.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.134.0)， [4.0.135.0]( https://github.com/aws/aws-sdk-net/releases/tag/4.0.135.0)， [4.0.136.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.136.0)， [4.0.137.0]( https://github.com/aws/aws-sdk-net/releases/tag/4.0.137.0)， [4.0.138.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.138.0)
+- [Azure/azure-sdk-for-net](https://github.com/Azure/azure-sdk-for-net)
+    - [Azure.Identity_1.17.1](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Identity_1.17.1)，[Azure.Identity.Broker_1.3。 1](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Identity.Broker_1.3.1)， [Azure.Monitor.OpenTelemetry.AspNetCore_1.4. 0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Monitor.OpenTelemetry.AspNetCore_1.4.0)， [Azure.Monitor.OpenTelemetry.Exporter_1.5。 0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Monitor.OpenTelemetry.Exporter_1.5.0)，[Azure.ResourceManager.Cdn_1.5。 1](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.ResourceManager.Cdn_1.5.1)，[Azure.ResourceManager.CognitiveServices_1.5。 2](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.ResourceManager.CognitiveServices_1.5.2)，[Azure.ResourceManager.Elastic_1.1。 0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.ResourceManager.Elastic_1.1.0)，[Azure.ResourceManager.Maintenance_1.1。 3](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.ResourceManager.Maintenance_1.1.3)，[Azure.ResourceManager.PaloAltoNetworks.Ngfw_1.2。 0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.ResourceManager.PaloAltoNetworks.Ngfw_1.2.0)， [Microsoft.Azure.WebJobs.Extensions.WebPubSubForSocketIO_ 1.0.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Microsoft.Azure.WebJobs.Extensions.WebPubSubForSocketIO_1.0.0)， [Microsoft.Extensions.Azure_1.13. 1](https://github.com/Azure/azure-sdk-for-net/releases/tag/Microsoft.Extensions.Azure_1.13.1)
+- [DataDog/dd-trace-dotnet](https://github.com/DataDog/dd-trace-dotnet)
+    - [v3.31.0](https://github.com/DataDog/dd-trace-dotnet/releases/tag/v3.31.0)
+- [dotnet/SqlClient](https://github.com/dotnet/SqlClient)
+    - [v5.1.8](https://github.com/dotnet/SqlClient/releases/tag/v5.1.8)， [v6.0.4](https://github.com/dotnet/SqlClient/releases/tag/v6.0.4)， [v6.1.3]( https://github.com/dotnet/SqlClient/releases/tag/v6.1.3)
+- [googleapis/google-cloud-dotnet](https://github.com/googleapis/google-cloud-dotnet)
+    - [Google.Cloud.Datastore.V1-4.17.0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Datastore.V1-4.17.0)，[Google.Cloud.Firestore-3.13。 0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Firestore-3.13.0)， [Google.Cloud.Spanner-5.7. 0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Spanner-5.7.0)， [Google.Shopping.Merchant.Accounts.V1-1.3. 0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Shopping.Merchant.Accounts.V1-1.3.0)， [Google.Shopping.Merchant.Inventories.V1-1.2. 0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Shopping.Merchant.Inventories.V1-1.2.0) [谷歌购物商户问题解决.V1-1.2.0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Shopping.Merchant.IssueResolution.V1-1.2.0)， [Google.Shopping.Merchant.Products.V1-1.3. 0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Shopping.Merchant.Products.V1-1.3.0)， [Google.Shopping.Merchant.Quota.V1-1.2. 0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Shopping.Merchant.Quota.V1-1.2.0)
+- [microsoft/CsWin32](https://github.com/microsoft/CsWin32)
+    - [v0.3.248](https://github.com/microsoft/CsWin32/releases/tag/v0.3.248)、[v0.3.250](https://github.com/microsoft/CsWin32/releases/tag/v0.3.250)、[v0.3。 252](https://github.com/microsoft/CsWin32/releases/tag/v0.3.252)
+- [newrelic/newrelic-dotnet-agent](https://github.com/newrelic/newrelic-dotnet-agent)
+    - [v10.47.0](https://github.com/newrelic/newrelic-dotnet-agent/releases/tag/v10.47.0)
+- [开放遥测/开放遥测点网贡献](https://github.com/open-telemetry/opentelemetry-dotnet-contrib)
+    - [PersistentStorage-1.0.2](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/releases/tag/PersistentStorage-1.0.2)， [Resources.AWS-1.14。 0](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/releases/tag/Resources.AWS-1.14.0)
+- [unoplatform/uno](https://github.com/unoplatform/uno)
+    - [106年4月6日](https://github.com/unoplatform/uno/releases/tag/6.4.106 年)，[133年4月6日](https://github.com/unoplatform/uno/releases/tag/6.4.133 年)，[6.4。 43](https://github.com/unoplatform/uno/releases/tag/6.4.43)
+
+## 文章、幻灯片及更多内容
+### UserlandDotNet：将Linux的超能力重新交还给.NET开发者
+https://dev.to/iron-software/userlanddotnet-putting-linux-superpowers-back-in-the-hands-of-net-developers-56mo
+
+### 让我们来看看 Microsoft Agent Framework(C#)第14部分 让我们试试 Durable Agent
+https://zenn.dev/microsoft/articles/agent-framework-014
+
+### 客户端-WebAPI(.NET)构建，使用 MSAL JWT 承载认证授权支持零信任环境
+https://zenn.dev/srtia2318/articles/organize-info19-msal-jwt-ffce915e08236c
+
+### .NET 10 中原生 AOT 的状态
+https://code.soundaranbu.com/state-of-nativeaot-net10
+
+### 如何修复显示 Visual Studio 安装未完成 - Qiita
+https://qiita.com/KM_20005/items/8188d4ec0ac8e42cc6f5
+
+### 抱怨.NET进展过快的公司应该直接付费购买终止后的支持
+https://andrewlock.net/companies-using-dotnet-need-to-suck-it-up-and-pay-for-support/
+
+### [C#14] 如何使用字段关键词
+https://zenn.dev/peacockanderson/articles/d3044f27db048a
+
+### .NET 8 - 10 迁移说明(Blazor Web 应用/服务器)
+https://zenn.dev/tetr4lab/articles/be55dfecb55896
+
+### 用于管理 API 规范(OpenAPI)。 NET 10(ASP.NET 核心)
+https://zenn.dev/gkuroki/articles/use-dotnet10-instead-of-typespec
+
+### 探索用PowerShell检索HTML剪贴板时出现的混乱原因 - Qita
+https://qiita.com/TETSURO1999/items/88f895a10088f4bacc0e
+
+### [WinUI3] 使用WinUI3 - Qiita，这些并非必需的事项
+https://qiita.com/inco-cyber/items/eeb11fb74bf8ccada9a4
+
+### .NET 10 中添加到 LINQ 的方法 - Qiita
+https://qiita.com/RyotaMurohoshi/items/3d82317473b3c4652018
+
+### ASP.NET - Qiita 实现的 Web API 测试实现
+https://qiita.com/soratarou3/items/047b1e8651778abf7a3e
+
+### 【LTS】。 NET 10 × 开始在Visual Studio 2026中开发Azure Functions——C# 14 - Qiita 的新功能
+https://qiita.com/s_w_high/items/e988886aa3854ffd492f
+
+### 花更少时间升级，多花时间在Visual Studio 2026中编程 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/spend-less-time-upgrading-more-time-coding-in-visual-studio-2026/
+
+### Poser - 在测试时替换 C# 中的静态方法等
+https://zenn.dev/mima_ita/articles/463bb8e5c8b9f1
+
+### 用GitHub Copilot Testing for .NET - .NET博客，增强你的测试覆盖率
+https://devblogs.microsoft.com/dotnet/github-copilot-testing-for-dotnet/
+
+### .NET 10 和 C# 14 有什么新动态
+https://dev.to/iron-software/whats-new-in-net-10-and-c-14-109n
+
+### JetBrains 正前往 VSLive！ 奥兰多 | .NET 工具博客
+https://blog.jetbrains.com/dotnet/2025/11/15/jetbrains-is-heading-to-vslive-orlando/
+
+### 开始学习“现代C#”吧！ 2025【. NET10/C#14]
+https://zenn.dev/inuinu/articles/modern-c-sharp-2025-in-csharp14-and-dotnet10
+
+### Azure MCP 服务器现已内置于 Visual Studio 2026：代理式工作流的新纪元 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/azure-mcp-server-now-built-in-with-visual-studio-2026-a-new-era-for-agentic-workflows/
+
+### Rider 数据库功能 | .NET 工具博客
+https://blog.jetbrains.com/dotnet/2025/11/17/database-features-in-rider/
+
+### (继续)获取C#中的CPU模型 - tech.guitarrapc.cóm
+https://tech.guitarrapc.com/entry/2025/11/18/013000
+
+### 两种FileOpenPicker类型
+https://zenn.dev/shinta0806/articles/file-open-picker
+
+### [C#] Aspire CLI - Qiita 的介绍与基本使用
+https://qiita.com/KM_20005/items/808d46799ff785b73786
+
+### 在Visual Studio Code中调试基于文件的应用程序
+https://zenn.dev/toras9000/articles/12d5f5bc624980
+
+### Visual Studio 2026全新用户体验的首秀 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/a-first-look-at-the-all%e2%80%91new-ux-in-visual-studio-2026/
+
+### 我想更改密钥以在Visual Studio 2026中应用代码补全
+
+https://blog.azure.moe/2025/11/14/visual-studio-2026-%e3%81%ae%e3%82%b3%e3%83%bc%e3%83%89%e8%a3%9c%e5%ae%8c%e3%81%ae%e9%81%a9%e7%94%a8%e3%82%ad%e3%83%bc%e3%82%92%e5%a4%89%e3%81%88%e3%81%9f%e3%81%84/ 
+
+### .NET 10 中 Blazor 的新功能 期望
+https://zenn.dev/poipoionigiri/articles/652c52626eb54f
+
+## 库、仓库、工具等
+### BoolHak/NSerfProject：Serf 移植到 .net C#
+https://github.com/BoolHak/NSerfProject?tab=readme-ov-file
+
+- [NSerf：.NET 分布式拼图的缺失一块](https://medium.com/@boolhak/nserf-the-missing-piece-of-the-net-distributed-puzzle-830b5ba122f5)
+
+## 今日人物
+
+**迈克尔·O·拉宾**([希伯来语](https://zh.wikipedia.org/wiki/希伯來語)：מִיכָאֵל אֹשֶׁר רַבִּין，英语：Michael Oser Rabin，1931年9月1日— )是一名[以色列](https://zh.wikipedia.org/wiki/以色列)[计算机科学家](https://zh.wikipedia.org/wiki/计算机科学家)，1976年[图灵奖](https://zh.wikipedia.org/wiki/图灵奖)得主。
+
+拉宾出生于[德国](https://zh.wikipedia.org/wiki/德国)[布雷斯劳](https://zh.wikipedia.org/wiki/布雷斯劳)([二战](https://zh.wikipedia.org/wiki/二战)后成为[波兰](https://zh.wikipedia.org/wiki/波兰)[弗罗茨瓦夫](https://zh.wikipedia.org/wiki/弗羅茨瓦夫))，父亲是一个[拉比](https://zh.wikipedia.org/wiki/拉比)。
+
+1953年，他获得[希伯来大学](https://zh.wikipedia.org/wiki/希伯来大学)的[理学硕士](https://zh.wikipedia.org/wiki/理學碩士)，1956年获[普林斯顿大学](https://zh.wikipedia.org/wiki/普林斯顿大学)[博士学位](https://zh.wikipedia.org/wiki/博士学位)。
+
+1959年，拉宾和[达纳·斯科特](https://zh.wikipedia.org/wiki/达纳·斯科特)共同发表了“有限自动机与其判定性问题”(*Finite Automata and Their Decision Problems*)的论文，提出了[非确定自动机](https://zh.wikipedia.org/wiki/非确定有限状态自动机)的观点。他们也因此获得了1976年的图灵奖，并做“计算机复杂性”(Complexity of Computations)的演讲。图灵奖的引文是：
+
+因他们的合著论文“有限自动机与其判定性问题”。论文中引入了非确定自动机的概念，被证明是(计算理论科学研究中的)一个非常重要的概念。拉宾和斯科特的这篇经典论文成为了这个领域后续研究的源泉。[[1\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-1)
+
+非确定自动机已经成为[计算复杂度理论](https://zh.wikipedia.org/wiki/计算复杂度理论)中的一个重要概念，特别是在描述[P与NP问题](https://zh.wikipedia.org/wiki/P/NP问题)的[复杂度类](https://zh.wikipedia.org/wiki/复杂度类)时。
+
+1969年，拉宾证明N successors的[二阶逻辑](https://zh.wikipedia.org/wiki/二階邏輯)是[可判定的](https://zh.wikipedia.org/wiki/可判定性)。[[2\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-2)证明的关键部分暗示了[奇偶游戏](https://zh.wikipedia.org/w/index.php?title=奇偶游戏&action=edit&redlink=1)的确定性。1975年，拉宾发明了[米勒-拉宾检验](https://zh.wikipedia.org/wiki/米勒-拉宾检验)，这是一个相当快速的[随机化算法](https://zh.wikipedia.org/wiki/随机化算法)(有较小的可能性错误)，用于判断一个大数是否是[素数](https://zh.wikipedia.org/wiki/素数)。[[3\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-3)[[4\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-4) 快速[素数检验](https://zh.wikipedia.org/wiki/素数检验)是目前大部分[公钥密码体系](https://zh.wikipedia.org/wiki/公钥密码)的关键。1979年，拉宾发明了第一个[非对称密码系统](https://zh.wikipedia.org/wiki/公开密钥加密)——[拉宾密码系统](https://zh.wikipedia.org/w/index.php?title=拉宾密码系统&action=edit&redlink=1)。它的安全性被证明和[整数](https://zh.wikipedia.org/wiki/整数)[因式分解](https://zh.wikipedia.org/wiki/因式分解)的复杂度相同。[[5\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-5)1981年，拉宾提出了[不经意传输](https://zh.wikipedia.org/wiki/不经意传输)技术。[[6\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-6) 1987年，拉宾和[理查德·卡普](https://zh.wikipedia.org/wiki/理查德·卡普)提出了一个著名的[字符串搜索算法](https://zh.wikipedia.org/wiki/字串搜尋演算法)——[拉宾-卡普算法](https://zh.wikipedia.org/wiki/Rabin–Karp算法)。[[7\]](https://zh.wikipedia.org/wiki/迈克尔·拉宾_(科学家)#cite_note-7)
+
+![迈克尔·O·拉宾](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/zOJrPEh7I_4eLEG6SKwb1_1536x1024_20251202_132826_raw.jpg)
+
+## C# .NET 交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET 性能优化经验的群组，主题包括但不限于：
+
+* 如何找到.NET 性能瓶颈，如使用 APM、dotnet tools 等工具
+* .NET 框架底层原理的实现，如垃圾回收器、JIT 等等
+* 如何编写高性能的.NET 代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET 问题和宝贵的分析优化经验。**目前一群已满，现在开放二群。**可以加我 vx，我拉你进群: **ls1075** 另外也创建了 **QQ Group**: 687779078，欢迎大家加入。
