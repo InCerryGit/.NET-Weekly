@@ -1,0 +1,360 @@
+**C# .NET 周刊｜2026年5月5期 2026-05-31 dotnet_week_26_5_5**
+
+## 国内文章
+### [翻译] 为什么我要用 C# 构建数据库引擎
+
+https://www.cnblogs.com/liuliu-66/p/20198043/Why-Im-Building-a-Database-Engine-in-Csharp
+
+作者介绍 Typhon，一个用 .NET/C# 构建的嵌入式持久化 ACID 数据库引擎，原生支持 ECS 范式，目标实现 1–2 微秒事务提交。文章直面对 C# 的质疑：GC 停顿、内存布局不可控、JIT 预热和边界检查开销。作者展示可行方案：unsafe 指针与固定内存实现页缓存，ref struct 消除堆分配，受约束泛型实现单态化，硬件内置指令利用 SIMD。文章技术细节适中且具实用性，强调现代 .NET 特性能接近 C/C++ 的性能。本文为系列导言，后续将深入事务、持久化与缓存设计。
+
+### 前端视角下的 C#
+
+https://www.cnblogs.com/wjszxli/p/20206652
+
+作者回顾C#经历，比较TypeScript与C#在类型、运行时、编译原理与工程设计上的差异。文章阐明TypeScript的结构类型在编译后消失、以成员结构决定兼容性，因而具有容错性却缺乏运行时保障。文章对比C#的名义类型，指出CLR通过Method Table维持类型身份，支撑反射、多态和泛型实例化，从而提供运行时安全与工程约束。作者旨在从底层设计决策解释前端后端在相似问题上为何演化出不同技术形态，并讨论这些差异在不同场景下的权衡与实践意义。
+
+### 聊一聊 MES系统如何实现多种标签打印并支持不同打印机
+
+https://www.cnblogs.com/axmes/p/20153782
+
+文章介绍MES系统的可配置打印管理。模板用Bartender制作，模板只定义变量，服务端提供真实数据。示例给出C# CartonPrintService实现，服务监听打印请求、校验参数、查询模板与箱数据、下载模板文件并准备打印。代码展示关键流程但截断，缺少完整异常处理、并发与日志细节，也无引用说明。
+
+### 《HelloGitHub》第 122 期
+
+https://www.cnblogs.com/xueweihan/p/20191195
+
+HelloGitHub 每月更新，汇集入门与实战开源项目，覆盖多种编程语言。本文列出本期重点项目：C 语言有 ds4(DeepSeek 本地推理引擎)与 egos-2000(2000 行教学操作系统)。C# 有 codex-provider-sync、FluentFlyout 与 PeekDesktop。C++ 有 o3de 与 opentoonz。Go 有 cliamp、dolt、termshot 与 witr。JavaScript 有 docmd。每个项目附功能简介与支持平台，便于快速选择与实践。
+
+### 基于ONNXRuntime C#实现的高性能YOLO推理框架
+
+https://www.cnblogs.com/luoht/p/20176232
+
+YoloSharpOnnx是基于ONNX Runtime和OpenCVSharp的C#跨平台YOLO推理库。它支持目标检测、图片分类、实例分割、姿势估计和OBB等任务。它提供CPU、CUDA/TensorRT、OpenVINO、CoreML、DirectML等多种后端，支持批量推理和内存复用以提升性能。作者通过NuGet发布并给出导出与初始化示例。文档实用性强且部署灵活，但缺少详细性能基准、实现细节和外部引用。
+
+### Github Project-AI Agentic Framework (.NET)
+
+https://www.cnblogs.com/tianqing/p/20208843
+
+该项目为用 C#/.NET 10 编写的开源 Agentic 框架。框架基于 ReAct 循环，支持渐进式 ISkill 加载与 topK 意图选择。它兼容多家模型提供商(OpenAI 兼容、Azure、Anthropic、Gemini、Qwen 等)，支持文本与图像多模态、工具调用和流式 SSE/SignalR 输出。框架包含 MCP JSON-RPC、Agent 注册与互调、React WebUI 与钉钉集成。代码按 Providers、Skills、Kernel、MCP 等模块划分，结构清晰，便于扩展和集成。欢迎在 GitHub 上 Star 支持。
+
+### [MAF的Agent管道详解-02]IChatClient管道如何完美连接大模型？
+
+https://www.cnblogs.com/artech/p/20179621/agent-pipeline-02
+
+文章聚焦ChatClientAgent的IChatClient管道，详细描述IChatClient接口及两种调用方式：阻塞的GetResponseAsync和流式的GetStreamingResponseAsync。作者将IChatClient比作数据库的IDbConnection，说明其屏蔽底层模型实现的作用。文章介绍ChatOptions如何将OpenAI、Anthropic、Google等常用参数标准化，列举Temperature、MaxOutputTokens、ModelId和工具调用等配置。文中用接口和类示例说明设计细节，并强调通过中间件链实现解耦与可扩展性。
+
+### 在Vue/Nuxt、React/Next/TanstackStart、RazorPages折腾一圈后，还是回到了Blazor，但这回有SSR+HTMX+Alpine的加持
+
+https://www.cnblogs.com/functionMC/p/20183704
+
+作者在尝试Vue/Nuxt、React/Next和RazorPages后回到Blazor。后端采用AspNetCore，追求强类型和生态一致性。Blazor继承MVC/RazorPages服务端基因，在.NET8实现SSR、Server与Wasm集成，但存在Server延迟与内存、Wasm体积与启动时延问题。作者提出以SSR为主导的实践。把交互限定到每页或每组件，避免在布局包含交互组件。用Alpine处理简单客户端交互，用HTMX处理服务端交互，复杂交互才交给Server或Wasm。该策略能显著降低Server内存占用并通过集群部署靠近用户缓解延迟。
+
+### 基于 Blazor 实现的电梯运行监测系统
+
+https://www.cnblogs.com/known/p/20205911
+
+该文章介绍基于 .NET 10、Blazor Server、AntDesignBlazor、Known 与 MQTT 的电梯运行监测系统，旨在解决故障频发与维保响应滞后问题。系统实现安全登录与角色权限控制，提供智慧控制台展示在线率、告警、运行状态与资源总览。监控按楼盘/楼栋/单元/电梯四级组织，支持卡片与表格视图，显示速度、负载、当前楼层与最近事件。日志模块完整记录事件，支持多维检索与 Excel 导出。技术亮点为 SPA 体验、插件化框架与 MQTT+SignalR 的秒级数据推送，适用于物业、维保与监管场景。
+
+### Claude Code 支持 LSP 指南(C#/JAVA等)
+
+https://www.cnblogs.com/Bob-luo/p/20199100
+
+文章介绍在 Windows 上为 Claude Code 实现 C#/Java/Python/TypeScript LSP 的落地方案。作者先说明 Claude Code 通过 marketplace.json 注册 LSP 并由 Bun spawn 进程用 stdin/stdout 做 JSON-RPC 通信。文章暴露了三大问题：Bun 只能 spawn .exe、Bun 对 .NET PE 文件触发崩溃、cmd /c 中转破坏 .NET LSP 的 stdio。作者提出通用解法：让 Bun spawn node.exe，Node 再用 child_process 启动 OmniSharp 等 .NET LSP，恢复管道通信。文中给出各语言的具体配置与可复制脚本，最终实现无需改系统环境变量即可支持四种语言的代码导航与引用查找。
+
+### 上位机程序发布打包成安装包---Inno Setup
+
+https://www.cnblogs.com/jianghuxing/p/20241276
+
+文章强调将上位机程序打包为安装包的必要性，推荐免费轻量的Inno Setup。安装包能自动检测并部署缺失的运行库与驱动，降低使用门槛，满足项目验收与批量部署需求。安装包还能自动创建快捷方式、实现干净卸载、标注版本与防篡改，并通过脚本定制默认路径、权限、多语言界面和安装后行为。文章还按步骤说明了用Inno Setup打包的流程：下载安装工具、准备程序与.NET运行时、创建项目、配置文件与快捷方式、设置许可与管理员权限、打包生成并测试安装与卸载。
+
+### 【Application Insights】采样率对Function App日志收集的影响和解决方法
+
+https://www.cnblogs.com/lulight/p/20175573
+
+文章指出Function App在Application Insights中丢失日志常因默认采样导致。默认每秒最多保留20条遥测。作者提供Log Analytics查询检测RetainedPercentage以判断是否发生采样。文章解释itemCount含义，并指出聚合时需按itemCount加权。文章给出修改host.json的示例，通过excludedTypes排除Request和Exception或调整maxTelemetryItemsPerSecond来保证关键日志100%上报。作者建议对traces等高频数据保留采样以控制成本，并附参考链接。
+
+### 深入 .NET AI Agent 开发：利用 Microsoft.Agents.AI 提取思考、调用工具与执行脚本
+
+https://www.cnblogs.com/net-kevin-li/p/20181915
+
+本文介绍在 .NET 上用 Microsoft.Agents.AI 构建 AI Agent 的关键实现。AIAgentService 创建并封装 OpenAI 聊天客户端，支持自定义端点、超时和重试。通过 AISetting 注入或禁用工具与技能上下文。支持流式(RunStreamingAsync)和非流式(RunAsync)响应。通过 RawRepresentation 与 StreamingChatCompletionUpdate.Patch 提取 choices[].delta 中的 reasoning 或 reasoning_content，以重建模型思考链。通过 update.Contents 类型区分工具调用与工具结果。文章还演示如何将外部脚本安全地作为 Agent Skill 执行并回调结果。
+
+### AScript定制left/right join查询语法
+
+https://www.cnblogs.com/rockey627/p/20176770
+
+文章介绍在开源C#脚本引擎AScript中扩展LINQ语法以支持left join和right join。作者通过新增QueryNode的AddLeftJoin方法，生成join ... into和from ... DefaultIfEmpty以实现左连接。作者在FromTokenHandler中加入left/right关键字解析并展示关键代码片段与处理流程。文章基于.NET 10在Queryable/Enumerable中新增的LeftJoin/RightJoin扩展方法，目标是提高脚本语法灵活性。示例直观且实用，但内容截断，未完整展示right join实现和测试细节。
+
+### C#一行代码免写Web登录页：PicoServer 的 AddBasicAuth 中间件实战
+
+https://www.cnblogs.com/juziyu/p/20213433
+
+作者介绍在既有域名下部署内部服务的实践。项目包含 WebSocket、WebAPI、静态页面和扫码页，分别用自定义 JSON、简单 Token、Basic Auth 和无认证处理。为配置页选择浏览器自带的 Basic Auth，示例一行代码 server.AddBasicAuth("/daping/","admin","123456", "/daping/config");。文章说明了统一域名、运维简化和在代码中集中认证的好处，并展示了 PicoServer 提供的多种认证中间件及免认证子路径用法。建议在公网前用 NGINX 做 HTTPS 反代，证书由 NGINX 管理。文章实用且示例明确，但技术细节和安全讨论有限。
+
+### [MAF的Agent管道详解-05]对话历史的持久化和输入输出的增强
+
+https://www.cnblogs.com/artech/p/20227731/agent-pipeline-05
+
+文章介绍ChatClientAgent封装IChatClient，提出通过可插拔机制动态定制传入LLM的消息列表与配置，并对返回结果做后处理。核心组件为ChatHistoryProvider和AIContextProvider。ChatHistoryProvider为会话提供历史读写，并定义InvokingAsync与InvokedAsync两阶段钩子。上下文类型嵌套在Provider内，包含Agent、Session、RequestMessages及ResponseMessages等属性。示例代码使用ValueTask、CancellationToken与IEnumerable<ChatMessage>。该设计强调在调用前定制请求与调用后加工响应以提升灵活性和可扩展性。
+
+### 基于 SkiaSharp 的 WPF & AvaloniaUI 极简动图播放方案
+
+https://www.cnblogs.com/LCHL/p/20176221
+
+文章介绍基于SkiaSharp的AnimationImage，用于WPF和AvaloniaUI的动图播放方案。它支持Lottie(JSON)、GIF和WebP。它用SKCodec逐帧流式解码，降低内存占用；Lottie通过Skottie实现高帧率渲染。动画由Animation驱动，支持高于60FPS的帧率、预加载策略、全量缓存、RenderScale、循环次数和MVVM绑定。作者提供WPF和Avalonia的NuGet包及XAML示例。内容实用且及时，但缺乏详细基准数据和引用。
+
+### [MAF的Agent管道详解-04]如何让LLM按照要求的结构输出数据?
+
+https://www.cnblogs.com/artech/p/20208525/agent-pipeline-04
+
+文章介绍通过一组GetResponseAsync<T>扩展方法为IChatClient实现结构化输出。方法使用提供或默认的JsonSerializerOptions生成ChatResponseFormatJson，并将其赋给ChatOptions.ResponseFormat。该ResponseFormat携带JSON Schema以指导LLM按定义格式生成响应。IChatClient接收LLM返回后用匹配的JsonSerializerOptions反序列化，并封装为ChatResponse<T>返回。文中给出多种重载签名，整体实现简洁明确。
+
+### 上位机程序集的反编译与加壳保护
+
+https://www.cnblogs.com/jianghuxing/p/20206282
+
+文章指出基于.NET的上位机程序集因字节码易被反编译，导致核心逻辑泄露和知识产权风险。通过对比未加密与加密后的IL反编译结果，展示未加密可被ILSpy完整还原，加密后代码被混淆或转为机器码，反编译失败。文中给出ILSpy反编译操作步骤并以dotNET_Reactor为例说明加壳后文件增大、命名混乱且可能被杀软误报。文章提供可落地的加密保护流程与注意事项，适合需要防护.NET程序集的工程实践。
+
+### [MAF的Agent管道详解-03]连接LLM的IChatClient对象
+
+https://www.cnblogs.com/artech/p/20194058/agent-pipeline-03
+
+文章说明在IChatClient管道末端有与LLM交互的IChatClient对象。对象类型随模型和部署变化。系统提供多种实现。OpenAIClient和AzureOpenAIClient可通过GetChatClient或GetResponsesClient获取ChatClient或ResponsesClient。ChatClient需通过AsIChatClient扩展方法转换为IChatClient，ResponsesClient亦然。AIProjectClient可经GetProjectOpenAIClient得到继承自OpenAIClient的ProjectOpenAIClient，亦可用AsIChatClient转换。文末示例模拟了基于OpenAIClient的Agent ReAct循环，演示两次调用并共用ChatOptions，但内容中断未完。
+
+### Mysql事物的持久性及原子性
+
+https://www.cnblogs.com/yuxl01/p/20075991
+
+作者学习《凤凰架构》，回顾数据库事务的 ACID 概念。指出 A、I、D 是实现手段，C 是最终目标，四者并不正交。通过购物示例区分本地事务与分布式事务，说明微服务场景需引入 TCC、Saga。本文聚焦本地事务，解释原子性要求全部生效或全部回滚，持久性要求提交后数据必须写入磁盘不可撤销。强调磁盘写入存在中间状态，并以 TransactionScope 与 SqlConnection 的 C# 示例引出实现细节。
+
+### [MAF的Agent管道详解-01]塑智能体边界，从AIAgent抽象类开始
+
+https://www.cnblogs.com/artech/p/20163234/agent-pipeline-01
+
+文章介绍MAF的多态Agent设计。MAF提供AIAgent基类，核心实现为ChatClientAgent。ChatClientAgent以管道化组件构建与LLM的消息通道并实现ReAct循环。文章解析关键基础类型：AgentRunContext封装Agent、会话、请求消息与运行选项；AgentRunOptions包含ContinuationToken、AllowBackgroundResponses、AdditionalProperties和ResponseFormat。ContinuationToken用于流式中断恢复与非阻塞轮询。文中强调这些类型在Agent运行中的作用，但结尾被截断，缺少完整结论与引用。
+
+### Avalonia 制作复杂布局动画
+
+https://www.cnblogs.com/wckywckf/p/20221434
+
+本文探讨在 Avalonia 中实现复杂布局动画的难点与思路。文章先概述 Avalonia 的三类动画与页面过渡。指出布局六要素(Width、Height、Canvas.Left、Canvas.Top、Canvas.Right、Canvas.Bottom)与布局系统如何导致常规动画失败。分析直接对 Width/Height 做过渡以及用 C# 动态控制的缺陷。提出“布局参考系”方案，通过参考对象与目标容器获取或计算布局六要素以驱动动画。文章通过解构传统 .axaml 布局说明设计思路。总体概念明确但缺少完整实现细节与参考来源。
+
+### 【EF Core】继承策略——TPT
+
+https://www.cnblogs.com/tcjiaan/p/20238402
+
+文章补充了 EF Core 的 TPH(表继承)策略中非完整性类型鉴别器的用法。作者通过建库建表并插入示例数据，展示以 _type 列作为鉴别器的 DB First 场景。提供了 Student、TransferStudent、RepeatStudent 三个实体类和 OnModelCreating 中的映射起始代码(UseTphMappingStrategy、ToTable、列映射、主键配置)。示例实用且便于上手，但代码片段未完全展开，且缺乏参考来源。
+
+
+---
+
+## 国际周报
+
+## 话题
+### 改进 C# 内存安全 - .NET 博客
+https://devblogs.microsoft.com/dotnet/improving-csharp-memory-safety/
+
+### C# 凯吉 2026 | 官方网站
+https://csharpkaigi.net/
+
+- [C# Kaigi 2026 (2026/09/19 11：00〜)](https://csharpkaigi.connpass.com/event/394163/)
+
+### Visual Studio 可能更新——规划、审查、优化 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/visual-studio-may-update-plan-review-refine/
+
+### Qt Bridges：C#桥的公开测试发布！
+https://www.qt.io/blog/qt-bridges-public-beta-for-csharp
+
+### 宣布代理治理工具包 .NET MCP 扩展 - .NET 博客
+https://devblogs.microsoft.com/dotnet/announcing-agent-governance-toolkit-mcp-extensions-for-dotnet/
+
+## 发布
+- [AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia)
+    - [2016年3月11日](https://github.com/AvaloniaUI/Avalonia/releases/tag/11.3.16年)
+- [aws/aws-sdk-net](https://github.com/aws/aws-sdk-net)
+    - [4.0.248.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.248.0)
+    - [4.0.249.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.249.0)
+    - [4.0.250.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.250.0)
+    - [4.0.251.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.251.0)
+    - [4.0.252.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.252.0)
+    - [4.0.253.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.253.0)
+    - [4.0.254.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.254.0)
+    - [4.0.255.0](https://github.com/aws/aws-sdk-net/releases/tag/4.0.255.0)
+- [Azure/azure-cosmos-dotnet-v3](https://github.com/Azure/azure-cosmos-dotnet-v3)
+    - [3.60.0](https://github.com/Azure/azure-cosmos-dotnet-v3/releases/tag/3.60.0)
+- [Azure/azure-sdk-for-net](https://github.com/Azure/azure-sdk-for-net)
+    - [Azure.AI.Speech.Transcription_1.0.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.AI.Speech.Transcription_1.0.0)
+    - [Azure.Core_1.56.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Core_1.56.0)
+    - [Azure.Core_1.57.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Core_1.57.0)
+    - [Azure.Identity.Broker_1.7.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Identity.Broker_1.7.0)
+    - [Azure.Monitor.OpenTelemetry.Exporter_1.8.1](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.Monitor.OpenTelemetry.Exporter_1.8.1)
+    - [Azure.ResourceManager.Storage_1.7.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/Azure.ResourceManager.Storage_1.7.0)
+    - [System.ClientModel_1.13.0](https://github.com/Azure/azure-sdk-for-net/releases/tag/System.ClientModel_1.13.0)
+- [CommunityToolkit/Aspire](https://github.com/CommunityToolkit/Aspire)
+    - [v13.3.0](https://github.com/CommunityToolkit/Aspire/releases/tag/v13.3.0)
+- [DataDog/dd-trace-dotnet](https://github.com/DataDog/dd-trace-dotnet)
+    - [v3.44.0](https://github.com/DataDog/dd-trace-dotnet/releases/tag/v3.44.0)
+- [dotnet/maui](https://github.com/dotnet/maui)
+    - [10.0.70](https://github.com/dotnet/maui/releases/tag/10.0.70)
+- [googleapis/google-cloud-dotnet](https://github.com/googleapis/google-cloud-dotnet)
+    - [Google.Cloud.Compute.V1-3.28.0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Compute.V1-3.28.0)
+    - [Google.Cloud.Container.V1-3.38.0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Container.V1-3.38.0)
+    - [Google.Cloud.Logging.Log4Net-5.0.0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Logging.Log4Net-5.0.0)
+    - [Google.Cloud.Support.V2-1.6.0](https://github.com/googleapis/google-cloud-dotnet/releases/tag/Google.Cloud.Support.V2-1.6.0)
+- [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy)
+    - [v10.1](https://github.com/icsharpcode/ILSpy/releases/tag/v10.1)
+- [MessagePack-CSharp/MessagePack-CSharp](https://github.com/MessagePack-CSharp/MessagePack-CSharp)
+    - [v2.5.205](https://github.com/MessagePack-CSharp/MessagePack-CSharp/releases/tag/v2.5.205)
+    - [v3.1.6](https://github.com/MessagePack-CSharp/MessagePack-CSharp/releases/tag/v3.1.6)
+- [微软/Aspire](https://github.com/microsoft/aspire)
+    - [v13.3.2](https://github.com/microsoft/aspire/releases/tag/v13.3.2)、[v13.3.3](https://github.com/microsoft/aspire/releases/tag/v13.3.3)、[v13.3。4](https://github.com/microsoft/aspire/releases/tag/v13.3.4)，[v13.3.5](https://github.com/microsoft/aspire/releases/tag/v13.3.5)
+- [StackExchange/StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis)
+    - [2010年13月2日](https://github.com/StackExchange/StackExchange.Redis/releases/tag/2.13.10年)
+- [unoplatform/uno](https://github.com/unoplatform/uno)
+    - [6.5.237](https://github.com/unoplatform/uno/releases/tag/6.5.237)
+## 文物、幻灯片等
+### 给你的.NET MAUI安卓应用进行Material 3改造 - .NET博客
+https://devblogs.microsoft.com/dotnet/dotnet-maui-material-3/
+
+### 作为 .NET 开发者，更多地利用 GitHub Copilot - .NET 博客
+https://devblogs.microsoft.com/dotnet/doing-more-with-github-copilot/
+
+### EntityFrameworkCore 版本按项目迁移(WPF + MSIX + SQLite)- Qiita
+https://qiita.com/msms/items/8019a03dd24bba81e2da
+
+### [C# 数据结构] 快速计算段树中的区间最小值
+https://zenn.dev/student_blog/articles/segment-tree-range-min-csharp
+
+### Windows PE文件如何使用自定义资源嵌入任何内容 » TrainSec
+https://trainsec.net/library/windows-internals/how-windows-pe-files-use-custom-resources-to-embed-anything/
+
+### .NET 11 中的 Zstandard 压缩
+https://steven-giesel.com/blogPost/6066abb6-640a-4225-ac33-3f4d5a1a1d16
+
+### 我们不拥有ilspy dot org · 第#3709期 · icsharpcode/ILSpy
+https://github.com/icsharpcode/ILSpy/issues/3709
+
+### . .NET 中针对供应链攻击的对策
+https://zenn.dev/litharge/articles/668e15f498345a
+
+### C# 与io_uring的网络深度探讨 — 第四部分 — 虫族
+https://mda2av.github.io/zerg/blog/io-uring-minima-part-4.html
+
+- [C#网络深度探访 io_uring — 第五部分 — 虫族](https://mda2av.github.io/zerg/blog/io-uring-minima-part-5.html)
+
+### 尝试使用 Microsoft 代理框架与本地大型语言模型 第14部分(MCP 客户端)
+https://zenn.dev/yy7613/articles/e329f7ebbb3c00
+
+### 在无Docker Windows EC2上介绍.NET Aspire 仪表盘
+https://zenn.dev/kutar/articles/59933b6bdd24fe
+
+### 芬威克树清晰图解(BIT)
+https://zenn.dev/student_blog/articles/fenwick-tree-bit-csharp
+
+### 蛋糕 v6.2.0 发布
+https://cakebuildnet.medium.com/cake-v6-2-0-released-97fa838a35f9
+
+### Rider 2026.2 EAP 3：具成本效益的代理测试覆盖、代码变更预览、游戏开发模板与NuGet改进 | .NET 工具博客
+https://blog.jetbrains.com/dotnet/2026/05/22/rider-2026-2-eap-3-cost-effective-agentic-test-coverage-code-change-previews-gamedev-templates-and-nuget-improvements/
+
+### 在WinUI 3 - Qiita中实现商业级“自定义标题栏”
+https://qiita.com/youx2moon/items/ef8901a94d2746fbb3ce
+
+### 基于MSBuild SDK的新.NET Isolated SDK现已进入预览阶段——Shibayan杂项笔记
+https://blog.shibayan.jp/entry/2026/05/25/175710
+
+### 我如何利用原始WASM指针绕过了Blazor WebAssembly的虚拟DOM
+https://dev.to/unitbuilds_cc/how-i-bypassed-blazor-webassemblys-virtual-dom-using-raw-wasm-pointers-4jn7
+
+### 点莫滕 | 在你的.NET PR中自动获取API差异图
+https://xaml.dev/post/automatically-getting-api-difference-diagrams-in-your-net-prs
+
+### 取消令牌 现在不能问
+https://zenn.dev/poipoionigiri/articles/eafa9efa99be11
+
+### 你的开发循环充满了部落知识 | Aspire 博客
+https://devblogs.microsoft.com/aspire/dev-loop-tribal-knowledge/
+
+### Microsoft官方WinUI代理插件如何让WinUI 3应用开发变得更简单
+https://zenn.dev/microsoft/articles/winui-agent-plugin
+
+### .NET(OK，C#)终于获得了联合类型🎉：探索.NET 11预览版 - 第二部分
+https://andrewlock.net/exploring-the-dotnet-11-preview-2-dotnet-gets-union-types/
+
+### 试用 HarnessAgent - Microsoft Agent Framework (C#)
+https://zenn.dev/microsoft/articles/agent-framework-harness-intro
+
+### 尝试使用 Microsoft Agent Framework CodeAct 运行 JavaScript
+https://zenn.dev/yy7613/articles/d4e0c2762beac6
+
+### [.NET] 最近合并的LINQ最小/最大优化
+https://zenn.dev/prozolic/articles/d982d5f9f82973
+
+### 尝试用 ONNX 运行时(C#)推断用 Python 训练的 CNN 模型 - Qiita
+https://qiita.com/inuta-one/items/31ea766cbfaa3fbc1653
+
+### Playwright+ for .NET Apps
+https://platform.uno/blog/playwright-for-dotnet-apps/
+
+### 通过GitHub Actions简化Aspire SDK的更新
+https://csharp.christiannagel.com/2026/05/10/aspire-update/
+
+### 想尝试数字认证API认证
+https://zenn.dev/au/articles/why-choose-dotnet
+
+### 在 .NET 中书写无分配代码
+https://slicker.me/dotnet/allocation-free.html
+
+### VSLive！ Microsoft AI 黑客松 2026：带着可工作代码让你的团队回家 - Visual Studio 博客
+https://devblogs.microsoft.com/visualstudio/vslive-microsoft-ai-hackathon-2026-send-your-team-home-with-working-code/
+
+### 尝试运行 Microsoft Agent Framework 的 Magentic(在 C# 版本 1.5.0 中确认)
+https://zenn.dev/yy7613/articles/2cd76b4845c553
+
+### 代理信任管理，包含代理治理工具包中的代理信任——.NET 9 实现介绍
+https://zenn.dev/microsoft/articles/agent-governance-toolkit-trust-02
+
+### NuGet 包修剪：更清洁的依赖与可操作的漏洞报告 - .NET 博客
+https://devblogs.microsoft.com/dotnet/nuget-package-pruning-in-dotnet-10/
+
+### 构建前规划：介绍Visual Studio中的计划代理 - Visual Studio博客
+https://devblogs.microsoft.com/visualstudio/plan-before-you-build-introducing-the-plan-agent-in-visual-studio/
+
+### 为什么32位x86系统的Windows客户端版本会人为限制内存在4GB？ - 旧新事物
+https://devblogs.microsoft.com/oldnewthing/20260512-00/?p=112316
+
+### 尝试在.NET上的Microsoft Foundry Local 1.1
+https://blog.azure.moe/2026/05/18/microsoft-foundry-local-1-1-%e3%82%92-net-%e3%81%a7%e4%bd%bf%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b/
+### 用12字节更改.NET方法的目的地 - Qiita
+https://qiita.com/ZiYuCai1984/items/f712d23e71d9d2e358dd
+
+### 晶圆图渲染在反向设计后，从3秒提升到1.6毫秒的故事
+https://zenn.dev/sitio1/articles/5d9f66005dbd21
+
+## 库、仓库、工具等
+### resx-designer - Visual Studio Marketplace
+https://marketplace.visualstudio.com/items?itemName=hetima.resx-designer
+
+- [. 创建了一个自动生成 VS Code 扩展&Designer.cs Strings.resx 编辑，以解决 .NET - Qiita] (https://qiita.com/hetima/items/a61a1d039e524fa79796)
+
+### 推特
+<!-- https://x.com/cognition/status/2057496130225668360?s=12&t=ggvrrZ7oLogHyNoIGNgjbw——>
+
+<!-- https://x.com/jcouv/status/2056601950452588873?s=12——>
+## 今日人物
+
+**弗雷德·布鲁克斯**(英语：Frederick Phillips "Fred" Brooks Jr.，1931年4月19日—2022年11月17日)，美国计算机科学家、软件工程先驱。他参与 IBM Stretch 和 System/360 的体系结构设计，并领导 OS/360 开发；其著作《人月神话》总结大型软件项目管理经验，提出了广为人知的“布鲁克斯定律”。此后他在北卡罗来纳大学教堂山分校创建计算机科学系，并研究交互式三维图形与虚拟环境。
+
+1999年，布鲁克斯因“对计算机体系结构、操作系统和软件工程作出里程碑式贡献”获得图灵奖。
+
+![弗雷德·布鲁克斯](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/fred-brooks.jpg)
+
+## C# .NET 交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET 性能优化经验的群组，主题包括但不限于：
+
+- 如何找到.NET 性能瓶颈，如使用 APM、dotnet tools 等工具
+- .NET 框架底层原理的实现，如垃圾回收器、JIT 等等
+- 如何编写高性能的.NET 代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET 问题和宝贵的分析优化经验。**目前一群已满，现在开放二群。**可以加我 vx，我拉你进群: **ls1075** 另外也创建了 **QQ Group**: 687779078，欢迎大家加入。
