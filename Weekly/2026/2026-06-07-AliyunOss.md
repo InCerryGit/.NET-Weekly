@@ -1,0 +1,116 @@
+**C# .NET 周刊｜2026年6月1期 2026-06-07 dotnet_week_26_6_1**
+
+## 国内文章
+### Means：基于 .NET 10 打造的开源自部署 S3 兼容对象存储服务
+
+https://www.cnblogs.com/token-ai/p/20308087
+
+Means 是基于 .NET 10 / ASP.NET Core 的开源自部署 S3 兼容对象存储服务。它实现生产级 S3 协议，支持 Bucket 管理、对象 CRUD、ListObjectsV2、Multipart Upload、版本控制、标签、生命周期、CORS、策略与预签名 URL。它兼容 path-style 与 virtual-hosted-style，返回 S3 风格 XML，支持 br/gzip 压缩与 Range 读取，Multipart 遵循 S3 规范并保证原子写入。内置 React 管理控制台提供登录、Bucket 与对象管理、策略与 AccessKey 管理、预签名链接、分片上传、审计与 Prometheus/OTLP 指标。源码 MIT 许可，适合 .NET 团队自部署与深度定制。
+
+### C# 内存安全性的重大演进：重新定义 unsafe 关键字
+
+https://www.cnblogs.com/shanyou/p/20244557
+
+Richard Lander 提出 MemorySafetyRules 1，使 C# 在保留 GC 的前提下更接近 Rust 的内存安全。新模型把危险判定从“使用指针”改为“解引用非托管内存”。stackalloc 仅在三条件同时满足时视为 unsafe。引入 safe 上下文关键字，禁止类型级 unsafe，改为在成员或解引用处标记。编译器提供迁移诊断。ref 安全可在 unsafe 上下文降级处理以减少误报。
+
+### 记一次 .NET 某注塑模具系统 CPU爆高分析
+
+https://www.cnblogs.com/huangxincheng/p/20282273
+
+作者接到朋友反馈，系统CPU飙至100%，拿到dump后用WinDbg分析。作者先用!tp确认CPU利用率为100%，再用!cpuid发现服务器仅2核。作者怀疑GC导致，使用~* k查看线程栈，看到多个.NET TP Worker在GC相关函数中等待，并出现trigger_gc_for_alloc/allocate_more_space路径，暗示频繁分配和GC竞争在低核环境下放大了CPU占用。文章展示了排查流程和关键命令输出，但未给出完整根因确认和具体优化建议，也缺少引用支持。
+
+### 自建 Copilot Cli 代理：让 GitHub Copilot 真正"Bring Your Own Key"
+
+https://www.cnblogs.com/donpangpang/p/20328879
+
+该项目基于 .NET 10，实现轻量级 Copilot CLI BYOK 代理，解决仅支持单一密钥的问题。作者分别暴露原生 OpenAI 与 Anthropic 端点，不做协议互转，使用 HttpCompletionOption.ResponseHeadersRead 与流式透传以降低延迟。实现 AutoCopilot 虚拟模型，可在运行时无缝绑定并切换真实模型以支持故障切换与 A/B 测试。代理记录 14 项请求级指标，提供成本与性能概览和趋势图表，便于计费和性能分析。源码与文档托管于 GitHub。
+
+### [MAF预定义ChatClient中间件-01]LoggingChatClient——在调用LLM前后输出日志
+
+https://www.cnblogs.com/artech/p/20279637/chat-client-pipeline-01
+
+LoggingChatClient是IChatClient的中间件。它在调用LLM前后记录日志，包含输入、输出和时间戳。你可通过日志级别控制输出详情。示例用OpenAIClient创建IChatClient，调用AsBuilder并用UseLogging注入ILoggerFactory，日志级别设为Debug或Trace。GetResponseAsync在调用前后分别输出“invoked”和“completed”日志。将级别设为Trace会记录完整的输入和输出内容。该中间件便于调试和监控Agent调用。
+
+### 基于Blazor实现的跟踪光伏智能运维平台
+
+https://www.cnblogs.com/known/p/20300134
+
+文章介绍基于Blazor技术栈的跟踪式光伏智能运维平台。说明了项目背景、系统架构与核心特性：Blazor Server 与 AntDesign Blazor、Known 插件化低代码、SignalR 实时推送、组件复用与事件驱动。列举PC端功能：3D 可视化、GIS 地图、设备卡片/表格监控、实时与历史告警、历史数据分析、远程控制、通信日志与项目/系统管理。描述移动端轻量化界面与关键操作流程。总体实用性强、架构清晰、时效性好，但缺少性能指标、部署细节和参考文献，创新点阐述有限。
+
+### [MAF预定义ChatClient中间件-02]FunctionInvokingChatClient——实现ReAct循环和人机交互的大功臣
+
+https://www.cnblogs.com/artech/p/20299435/chat-client-pipeline-02
+
+文章指出FunctionInvokingChatClient是Agent执行ReAct循环的核心中间件，缺失则Agent无法工作。文中解释ReAct循环的三步：思考、行动、观察，并说明模型通过调用已注册的工具函数来获取外部信息以完成推理。示例用C#与OpenAI/Azure库演示如何通过AsBuilder和UseFunctionInvocation注册中间件，并用天气查询工具触发一次迭代的ReAct流程。文中还提到对敏感工具可加入人工审批。示例代码部分展示了环境变量、工具创建和GetResponseAsync调用，但代码在末尾被截断。
+
+### .NET 8 Web开发入门(七)：安全门禁——JWT 身份验证与授权实战
+
+https://www.cnblogs.com/shenchuanchao/p/20281565/dotnet-8-web-development-part7-jwt-authentication-authorization
+
+文章用通俗语言介绍了 JWT 的概念、三部分结构与验证原理。展示了在 ASP.NET 项目中安装 Microsoft.AspNetCore.Authentication.JwtBearer 的步骤，并在 Program.cs 中给出 User 模型、模拟用户库和登录接口示例，演示如何创建 Claims 并发放 Token。示例实用、易上手，适合入门实践。缺点是示例使用明文密码、代码片段部分不完整，未说明签名密钥管理、Token 过期/刷新与撤销等安全细节，也缺乏参考链接。总体清晰可读但需增强安全与深度。
+
+### windbg 分析线程死锁
+
+https://www.cnblogs.com/chenyishi/p/20278293
+
+文章总结了排查ASP.NET线程卡死的标准流程。第一步用!tp观察线程池Running/Idle及队列，判断是否线程泄漏。第二步用!syncblk区分Monitor竞争死锁或线程在业务代码卡住。第三步从syncblk取OS-TID并用!clrstack抽取托管栈，定位出现ManualResetEventSlim.Wait、Task.Wait等上下文等待点。第四步解释偶发性因缓存或连接复用返回已完成Task与真实跨网IO不同，.Wait阻塞导致AspNetSynchronizationContext回调无法执行。第五步给出修复：全链路改为async/await或在await使用ConfigureAwait(false)。末尾提供了精简排查口诀。
+
+### 当 AgentGateway 遇上 OpenClaw.NET：企业级智能体基础设施的深度协同实战
+
+https://www.cnblogs.com/shanyou/p/20337134
+
+文章技术深度高，详述 AgentGateway 与 OpenClaw.NET 的架构、协议和性能指标。实用性强，给出部署分层、能力车道和零信任防护方案。表述清晰、结构分明，但部分性能与安全断言缺少实测数据。原创性适中，企业级云边协同与 A2A/MCP 联通有新意。时效性高，针对 2026 年漏洞与生态演进响应及时。可读性良好，专业术语多需背景知识。引用有限，仅含少量来源与 CVE 提及。
+
+### 【Azure App Service】应用服务(Web App)实战：用 .NET 代码把 Connection 耗尽与 SNAT 耗尽演练一次
+
+https://www.cnblogs.com/lulight/p/20275256
+
+文章区分 Outbound Connection 与 SNAT Port，给出四个 .NET 实验验证两类耗尽问题。实验1 每次 new HttpClient 导致 worker 上 TCP 连接耗尽并触发 SocketException。实验2 用单例 HttpClient 或 IHttpClientFactory 复用连接，配合 PooledConnectionLifetime 和 MaxConnectionsPerServer 优化连接复用。实验3 通过关闭连接池并设置 Connection: close 模拟 SNAT 端口耗尽。实验4 用单例 HttpClient 且将 MaxConnectionsPerServer ≤128 缓解 SNAT 耗尽。文中提供代码片段和异常日志，实用且可复现，但引用和深度讨论略显不足。
+
+### [MAF的Agent管道详解-06]ChatClientAgent对IChatClient和输入输出增强管道的整合
+
+https://www.cnblogs.com/artech/p/20249982/agent-pipeline-06
+
+文章介绍ChatClientAgent如何整合IChatClient、ChatHistoryProvider和AIContextProvider。展示两个构造函数，说明可传入IChatClient、ChatClientAgentOptions、ILoggerFactory和IServiceProvider。列出ChatClientAgent的主要属性与成员。重点说明ChatClientAgentOptions包含Id、Name、Description、ChatOptions、ChatHistoryProvider、AIContextProviders等配置，并有冲突处理和行为开关。代码片段展示类型定义但省略实现细节。文章侧重API设计与配置说明，便于开发者理解组件组合与初始化方式。
+
+### [MAF预定义ChatClient中间件-03]CachingChatClient——利用缓存省钱省时间
+
+https://www.cnblogs.com/artech/p/20319267/chat-client-pipeline-03
+
+文章介绍了CachingChatClient中间件的目的和实现要点。它提出将LLM视为纯函数以启用缓存的前提。实现使用DistributedCachingChatClient和IDistributedCache接口，示例提供InMemoryDistributedCache并展示与OpenAIClient的集成代码。首次调用触发远程LLM，后续相同输入命中缓存，清除缓存后会再次调用。文章实用性高并含可复现示例。技术深度中等，缺少对随机性、一致性风险及缓存失效策略的深入分析。表达清晰，可读性良好，但引用和背景论证不足。
+
+### Slickflow.AI 基于 Harness 工程规范的多智能体交互过程实现
+
+https://www.cnblogs.com/slickflow/p/20245331
+
+文章介绍Slickflow.AI在Slickflow5.0企业版中实现的Harness工程规范，用于将多智能体接入BPMN流程。规范遵循声明-注册-执行三阶段，强调工具与流程松耦合，业务开发者用C# Service类实现工具。架构包含三层生成、表单辅助配置和Claude Code工具生成，并比较三种交互模式。文中给出采购流程演示与落地路线图，近期预置工具库、中期声明式HTTP适配器、长期MCP协议集成。目标是以LLM Agent替代人工节点，实现自然语言驱动的端到端流程自动化。
+
+### [MAF的Agent管道详解-07]利用AIAgent中间件构建Agent管道
+
+https://www.cnblogs.com/artech/p/20261088/agent-pipeline-07
+
+文章介绍使用DelegatingAIAgent作为AIAgent的中间件，装饰并委托InnerAgent以构建AIAgent管道。DelegatingAIAgent继承AIAgent，持有InnerAgent并重写Id、Name、Description等成员以委托实现。它将GetService、CreateSessionCoreAsync、SerializeSessionCoreAsync、DeserializeSessionCoreAsync等调用转发给InnerAgent。通过嵌套多个DelegatingAIAgent可形成功能增强的中间件链，链条位于管道最前端以便统一控制和扩展。示例代码清晰展示了委托模式，但内容部分截断且缺乏引用说明。
+
+
+---
+
+## 国际周报
+
+**国际周报未更新**
+## 今日人物
+
+**姚期智**(英语：Andrew Chi-Chih Yao，1946年12月24日—)，中国计算机科学家、理论计算机科学与密码学先驱。他提出姚氏极小极大原理、通信复杂性模型和安全多方计算方法，并在伪随机性、算法分析、计算复杂性与量子计算等领域作出基础性贡献。2004年起任教于清华大学，创办计算机科学实验班和交叉信息研究院。
+
+2000年，姚期智因“对计算理论作出基础性贡献，包括基于复杂性的伪随机数生成理论、密码学和通信复杂性”获得图灵奖。
+
+![姚期智](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/andrew-yao.jpg)
+
+## C# .NET 交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET 性能优化经验的群组，主题包括但不限于：
+
+- 如何找到.NET 性能瓶颈，如使用 APM、dotnet tools 等工具
+- .NET 框架底层原理的实现，如垃圾回收器、JIT 等等
+- 如何编写高性能的.NET 代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET 问题和宝贵的分析优化经验。**目前一群已满，现在开放二群。**可以加我 vx，我拉你进群: **ls1075** 另外也创建了 **QQ Group**: 687779078，欢迎大家加入。
