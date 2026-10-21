@@ -1,0 +1,397 @@
+**C# .NET 周刊｜2026年7月3期 2026-07-19 dotnet_week_26_7_3**
+
+## 国内文章
+
+### 22届微软MVP连任：一个.NET技术人的社区长跑
+
+https://www.cnblogs.com/shanyou/p/21523972
+
+作者在2026年收到第22次微软MVP(Developer Technologies - .NET)通知，回顾自己从2006年起的社区之路。作者描述.NET从Windows专属到跨平台、开源、云原生并与AI深度融合的发展。作者从写WebForm教程的博主成长为AI与.NET交叉领域的CTO。作者披露博客数据：2307篇文章、1390万阅读，平均每3.5天一篇。作者强调MVP既是荣誉也是对持续分享的承诺。作者回忆2007年MVP峰会参与ASP.NET MVC讨论，体会社区影响产品方向。文章在感怀与技术史叙述间，质疑AI时代社区价值并坚持继续投入。
+
+### .NET CORE 动态扩展Options-配置运行时热更新
+
+https://www.cnblogs.com/yuxl01/p/21111216
+
+作者在新公司使用 ABP vNext，研究身份认证与权限时，发现传统 appsettings.json 与 IOptions 在多租户场景下无法按租户动态返回配置。文章分析了 IOptions 系列和 OptionsManager 的实现原理，指出 IOptionsMonitor 仅适合全局配置。作者介绍 ABP 的 AbpDynamicOptionsManager 设计思想，并给出不依赖 ABP、约100行代码的自实现方案以按租户从数据库动态加载配置，解决多租户、用户级别和组织上下文差异化配置问题。
+
+### .NET CORE 动态扩展Options-配置运行时热更新
+
+https://www.cnblogs.com/yuxl01/p/21111216
+
+作者基于 ABP vNext 研究动态配置问题。作者指出 IOptions 和 IOptionsMonitor 的全局限制。文中用多租户邮件配置举例，说明不同租户需不同 EmailOptions。文章解析 Options 工作原理与 OptionsManager 实现。介绍 AbpDynamicOptionsManager 设计，并给出不到百行的自实现方案。作者强调要先理解 Options 模式与 IOptions、IOptionsSnapshot、IOptionsMonitor 三者差异。
+
+### 高性能进程内队列 BufferQueue 1.0 版本发布
+
+https://www.cnblogs.com/eventhorizon/p/21646529
+
+BufferQueue 是为进程内的批量缓冲与处理设计的 .NET 库，支持 .NET 8 及以上。它用强类型 Topic、Partition 和 Consumer Group 管理数据。它同时支持 Pull/Push、Auto Commit 与 Manual Commit。Memory 模式侧重低延迟与高吞吐并可选有界容量。MemoryMappedFile 模式提供本地持久化、重启恢复、序列化与段清理策略。该库优化批量消费以降低调度开销，并在基准测试中优于 Channel 和 BlockingCollection 的批量场景。作者在仓库与 NuGet 提供示例与实现。该项目意在替代复杂进程内场景的自建方案，而非跨进程消息系统。
+
+### .NET 生产环境调试实战指南
+
+https://www.cnblogs.com/huangxincheng/p/21583576
+
+本文汇集实战案例，系统梳理 .NET 生产环境调试方法。文章首先教你根据 dump 快速判定崩溃类型并给出对应的 Windbg/CLR 命令。接着通过 WinForm UI 线程示例展示如何从线程、委托到反汇编定位问题。内存章节重点分析 LOH 碎片化，提供 GCSettings.LargeObjectHeapCompactionMode、PerfView 分析步骤和对象池复用的优化建议。文章实用且具操作性，但部分代码示例被截断，引用与深入解释稍显不足。
+
+### .NET 高级调试技术：超越基础 Dump 分析
+
+https://www.cnblogs.com/huangxincheng/p/21626674
+
+本文介绍在 .NET 生产环境中超越 WinDbg 和 PerfView 的高级调试技术。文章聚焦非托管句柄泄露、终结器队列瓶颈、线程同步内部机制、Harmony 运行时补丁与跨平台调试策略。通过示例展示 C# 调用 C++ 导致 Event 句柄未关闭的泄露场景。作者演示了使用 WinDbg 的 !handle、!htrace 命令以及在原生方法上设置断点并捕获托管调用栈来定位泄露源。内容偏实战，提供可复现的命令和堆栈信息，适合有经验的 .NET 调试工程师。
+
+### OpenClaw.NET 本体工程实践(一)：数字员工的「语义大脑」不是数据库
+
+https://www.cnblogs.com/shanyou/p/21432118
+
+本文面向 CTO、架构师和 .NET 开发者，聚焦 OpenClaw.NET 在工业场景中落地的工程决策。核心问题是哪些业务实例应存入本体，哪些应留在 MES/ERP。作者用大规模设备和海量工单的真实案例说明全部入本体或全部不入本体的风险。文章明确界定本体功能边界：本体做语义理解、三元组推理、SWRL 规则和 MetaSkill 上下文，不做时序采集、高 TPS 存储或替代业务系统。提出分层架构：业务系统为事实源，本体为语义大脑，Harness 为执行臂。结论是先明确“存多少”，再建 Schema 与推理。预告将详解按需实例化与切片技术。
+
+### .NET 程序保护实战系列 09 · 反调试与反转储
+
+https://www.cnblogs.com/gsyifan/p/21398680
+
+文章介绍反调试与反转储的实用对策。先识别两类攻击：动态调试与内存转储，并列出常用工具。实现 AntiDebug，结合托管的 Debugger.IsAttached 与原生的 IsDebuggerPresent，并建议将初始化插入 <Module>..cctor 以在用户代码前执行。实现 AntiDump 使用 unsafe 指针获取模块基址，解析 DOS/PE 头，清零节区名称并清理 CLR 元数据目录，阻断基于内存的程序集重建。文中还讨论元数据混淆(伪 TypeDef 与 MVID 修改)与 AdditionalProtectionsStep 四项保护的统筹。示例以 C# 为主，具备实操价值，但部分代码不完整且缺少引用说明。
+
+### 一个人写出的 3D 几何引擎：Ara3D SDK 技术深度剖析
+
+https://www.cnblogs.com/znlgis/p/21481756
+
+Ara3D SDK 是单人维护的 .NET 8 C# 3D 几何引擎，面向 AEC 并发布在 NuGet。它覆盖集合库、SIMD 加速几何算法、文件格式、BIM 模型、Roslyn 动态编译、Bowerbird 脚本与 MCP AI 协议。设计哲学强调正确性与可重构性，采用不可变数据、小接口和扩展方法，广泛运用函数式风格与 readonly struct。Plato 代码生成器自动产出 100+ 数学类型，生成高质量的 Vector3 等并内置距离场函数。项目尽量减少外部依赖，适合 .NET 开发者与几何算法工程师深入学习。
+
+### Magicodes.IE.IO 的导入和导出 API
+
+https://www.cnblogs.com/yyfh/p/21446100
+
+Magicodes.IE.IO 是独立的 XLSX 读写库，不依赖 EPPlus，擅长按行读取与顺序写入，不适合模板渲染或完整 Excel 对象模型。安装命令为 dotnet add package Magicodes.IE.IO。示例展示了模型类 Foo。写入支持 Xlsx.Write(path,data)、Xlsx.Write(stream,data)(流所有权由调用方管理)、Xlsx.ToBytes(小文件)、以及 Xlsx.WriteAsync 支持 IAsyncEnumerable。读取使用 Xlsx.Read<T> 与 ReadAsync，默认会关闭流，可通过 leaveOpen 保持流。可用 ExportProfile<T> 配置列名、格式、过滤与样式。注意 HTTP 响应流部分写入的错误处理与“先写临时文件再替换”策略。技术评估：深度与实用性强，清晰可读，原创性一般，引用不足。综合评分86。
+
+### Magicodes.IE.IO 的导入和导出 API
+
+https://www.cnblogs.com/yyfh/p/21446100
+
+文章介绍 Magicodes.IE.IO，一个不依赖 EPPlus 的独立 XLSX 读写库。它擅长按行读取和顺序写入，不支持模板渲染、已有文件编辑或完整 Excel 对象模型。给出安装命令与最小模型示例，示范 Xlsx.Write(path/stream)、Xlsx.ToBytes 和异步写入 Xlsx.WriteAsync。强调流的所有权规则与 HTTP 响应写入风险，读取默认会关闭流，可用 leaveOpen 保持打开。介绍 ExportProfile 用于配置列名、格式、过滤、样式、冻结表头和合并等功能。
+
+### 从零构建 Windows 桌面 RPA 框架：Go 与 .NET 的跨语言协奏
+
+https://www.cnblogs.com/znlgis/p/21446696
+
+文章介绍了Go引擎与.NET WPF的混合架构。Go承担底层执行，既可通过CGo生成的DLL被P/Invoke调用，也可作为子进程用stdin/stdout的JSON-Line协议通信。界面采用WPF，核心库同时编译为net48和net10以保证兼容性。两种通信方式对UI透明，通过统一的IEngineService抽象实现解耦。项目还实现了更真实的人类模拟，使用三次贝塞尔曲线拟合鼠标轨迹，并复现多种人类操作特征以提升仿真度。
+
+### Aneiang.Yarp v2.3.0.25：让 AI 成为你的 API 网关运维副驾驶
+
+https://www.cnblogs.com/aneiangsoft/p/21514161
+
+文章以凌晨三点告警为场景，说明 Aneiang.Yarp 的 AI 助手将排查时间从十分钟缩短到十秒。Aneiang.Yarp 是基于微软 YARP 的全功能 API 网关增强方案，补齐了 Dashboard、WAF、告警、熔断、可观测与配置回滚等生产能力。v2.3.0.25 引入基于 OpenAI Function Calling 的 AI 智能助手，能直接调用运维 API 并执行操作。助手提供 40 个工具，21 个只读用于查询，19 个写入操作在前端确认后执行。该功能显著提升运维效率并降低故障响应时延。
+
+### 从零构建 Windows 桌面 RPA 框架：Go 与 .NET 的跨语言协奏
+
+https://www.cnblogs.com/znlgis/p/21446696
+
+文章介绍了以 Go 为底层引擎、.NET WPF 为界面的混合架构。Go 可编译为 CGo DLL 供 P/Invoke 调用，也可作为子进程通过 stdin/stdout 的 JSON-Line 协议通信。界面通过统一的 IEngineService 抽象透明调用底层实现。Core 库同时面向 net48 和 net10，兼顾兼容性与原生桌面体验。作者阐述了拆分引擎与 UI 带来的性能和维护优势。人类模拟超越简单随机延迟，采用三次贝塞尔曲线拟合鼠标轨迹等真实操作特征。
+
+### 记一次 .NET 某电力后台监控系统 内存暴涨分析
+
+https://www.cnblogs.com/huangxincheng/p/21461680
+
+作者接到朋友反馈的电力系统内存暴涨问题。朋友提供了dump，作者用WinDbg分析。先运行!address -summary查看内存分布，发现大量MEM_PRIVATE和未知区域占用。随后调用!eeheap -gc查看托管堆以区分托管与非托管内存。文章在托管堆输出处被截断，未给出后续分析、根因定位或解决方案。整体展示了常用诊断命令和思路，但缺少完整结论与优化建议。
+
+### 基于AScript的JavaScript脚本语言发布啦
+
+https://www.cnblogs.com/rockey627/p/21601395
+
+AScript 是开源的 C# 动态脚本解析执行引擎。2026-07-14 发布了 JavaScript 语言扩展 AScript.Lang.JavaScript。它支持 JavaScript 基础语法、数据类型、数组、集合、字典、对象操作和 require 模块。文档给出安装命令、注册语言、函数定义、正则、对象与数组解构及字符串插值示例。示例基于 Script 类并包含断言验证，便于在 .NET 项目中快速集成。
+
+### [MAF预定义的AIContextProvider-05]CompactionProvider——采用多种策略压缩对话历史
+
+https://www.cnblogs.com/artech/p/21394971/ai-context-provider-05
+
+文章指出LLM无状态需传送对话历史，历史增长会超出上下文窗口且过长会干扰推理。作者介绍MAF的两种压缩方案：ReducingChatClient和本文重点的CompactionProvider。CompactionProvider抽象多种压缩策略(摘要、折叠、删除、替换)，支持自定义策略。示例使用SummarizationCompactionStrategy结合OpenAI gpt-5.2-chat，将多条消息在不丢失语义的前提下摘要成一条。示例代码展示了如何构建聊天客户端并在中间件中打印并传递压缩后的消息。该方法提高了上下文利用率并减小了消息传输成本。
+
+### 聊聊手游上线安全验收里几个容易误判的点
+
+https://www.cnblogs.com/bytehidden/p/21441754
+
+作者复盘一款被破解的游戏，发现安全清单虽全但未到位。主要问题是把签名、完整性和pinning等校验写在易被Hook的C#层，建议下沉到native并在登录、支付等关键节点重复校验。需增加包体大小检测防止伪装正版APK。协议层要防重放，用时间窗、nonce和签名并在服务端校验。核心结论：与奖励相关的一切判定必须以服务端为准，客户端校验只用于抬成本和拖时间，对作弊要切断收益端而非单纯检测。
+
+### Magicodes.IE.IO：XLSX I/O 管线：数据如何进出工作簿
+
+https://www.cnblogs.com/yyfh/p/21635031
+
+文章概述 Magicodes.IE.IO 在流上按行读写 XLSX，而非完整 Excel 对象模型。导出从 IEnumerable/IAsyncEnumerable 经 ExportProfile、XlsxWriter、ByteBufferWriter 到 ForwardOnlyZipWriter 顺序写入 ZIP。导入用 ZipArchive 定位 workbook、sharedStrings，再由 XmlReader 逐行还原 worksheet 行并映射为对象。文章区分逐行状态与工作簿状态，说明 SST、Central Directory 等需在结束时处理或整体加载。作者强调低分配、UTF-8 直写与顺序 ZIP 写法，并把缓冲、单元格、SST、映射与异步细节留到后续篇章展开。
+
+### .NET 程序保护实战系列 11 · 类型注入：无 DLL 依赖的运行时交付
+
+https://www.cnblogs.com/gsyifan/p/21554850
+
+文章提出零外部依赖的运行时交付方案，要求在保护时将所有运行时类型完整克隆到目标程序集。InjectHelper 基于 dnlib 实现深度克隆，提供克隆类型、方法和批量克隆的入口。InjectContext 保持原件到克隆的映射，按浅拷贝、深拷贝和签名修复的管道处理引用与依赖。文中说明 ImportMapper 与框架重定向的作用，介绍 MutationHelper 的占位符替换引擎，以及 RuntimeService 从保护工具自身加载运行时的策略。文章给出完整注入流程示例并讨论实现要点与设计权衡。实现偏工程化，示例代码贴合实际工具开发。
+
+### 聊聊手游上线安全验收里几个容易误判的点
+
+https://www.cnblogs.com/bytehidden/p/21441754
+
+作者复盘发现很多安全清单看似完整但没到位。加固、签名校验、pinning、完整性等若写在易被劫持的 C# 层，攻击者用 Frida/objection 可轻易绕过。建议把校验下沉到 native 层并在登录、支付等关键节点多次校验。增加包体大小检测以发现嵌入正版 APK 的绕过手法。协议层除 HTTPS 外需防重放，使用时间戳、一次性 nonce 和签名，服务端做超时、去重和签名校验。密钥在客户端终究有泄露风险，因此所有与奖励相关的判定必须以服务端为准。对抗加速器应直接取消其收益，将客户端与服务端数据取较小值。
+
+### OpenClaw.NET 本体工程实践(一)：数字员工的「语义大脑」不是数据库
+
+https://www.cnblogs.com/shanyou/p/21432118
+
+文章面向CTO、架构师和.NET开发者，聚焦OpenClaw.NET在构建数字员工时的数据边界决策。它指出把所有MES/ERP/CRM数据导入本体会带来性能和一致性问题，也强调完全不入库会削弱隐式推理与决策能力。文章澄清OpenClaw.NET本体是语义大脑，不是时序数据库或数据仓库，并列明本体能做与不能做的职责。提出分层架构：业务系统为事实源，本体负责理解與推理，Harness负责执行。结论是先决定“存多少”，再开展本体工程。预告下篇将详解按需实例化与切片实现。
+
+### 记一次 .NET 某光电成像后端解析系统 内存暴涨分析
+
+https://www.cnblogs.com/huangxincheng/p/21544526
+
+作者描述一次Linux上运行的.NET程序内存飙升排查。朋友在生产上抓取了内存转储(dotnet-dump或procdump)，作者用SOS的跨平台替代命令!maddress进行分析。输出显示大量Stack和GCHeap占用，整体内存达数GB。文章说明了在Linux上原有!address无效而改用!maddress的原因与部分分析过程，但未给出完整定位和解决方案，示例被截断。
+
+### AForge.Video.FFMPEG.dll加载失败解决指南
+
+https://www.cnblogs.com/LuoCore/p/21601046
+
+文章分析 AForge.Video.FFMPEG.dll 加载失败的三大原因：缺失原生 FFmpeg DLL、缺少 VC++ 2010 运行库(MSVCR100.dll)和平台架构不匹配。作者给出 dumpbin /headers 与 dumpbin /dependents 的诊断命令，提供 MSBuild 后置 Target 示例以按 PlatformTarget 自动复制 Lib\x64 或 Lib\x86 下的原生 DLL，并建议将对应架构的 MSVCR100.dll 放入输出目录。文章还区分 Release 与 Debug CRT 的可分发性，实用性强但 processorArchitecture 修复细节未完且缺少引用说明。
+
+### .NET 程序保护实战系列 10 · 资源加密：把 DLL 藏进保险箱
+
+https://www.cnblogs.com/gsyifan/p/21487210
+
+文章介绍把嵌入的 DLL 用三阶段 SPN(SBox 代换、ARX 流密钥、字节置换)加密并在运行时解密加载的方案。技术深度方面给出关键代码与 xorshift128 实现，但缺少完整解密、密钥管理与安全证明。实用性上方案可行且贴合.NET 保护需求，但自定义密码学存在弱点并可能被逆向。清晰度高，代码片段和流程分步说明明确。原创性体现在组合应用 xorshift128 与三阶段混合，但非密码学创新。及时性良好，适用于当前 .NET 生态的防护讨论。可读性强但未引用参考文献或对比现有工具。建议补充解密实现、密钥保护策略与标准加密对照测试。
+
+### mirror-switcher(镜像切换工具 / Mirror Switcher)
+
+https://www.cnblogs.com/eword/p/21636099
+
+本文介绍 mirror-switcher 工具集，提供跨平台纯 Python 的 nrm 风格命令行，统一 switch- 前缀，覆盖 20 多个生态系统的镜像源与版本切换。工具支持列出源、切换源和对所有源测速排序，兼容 npm、pip、docker、maven、go、cargo、yum、apt、pacman、nuget 等常用管理器。作者强调免外部依赖、开箱即用与中英文注释，便于在不同网络环境快速切换镜像。文档实用性和覆盖面强，技术深度中等，引用信息较少。
+
+### 业务报表生成：通过 C# 将数据库导出为 PDF
+
+https://www.cnblogs.com/jazz-z/p/21524677
+
+文章介绍使用 Free Spire.XLS 通过“数据库→DataTable→Excel→PDF”的路径导出报表。文章步骤清晰，包含依赖包、命名空间、免费版限制及示例代码，适合无需 Office 的小规模报表场景。实用性强，示例易复用。技术深度为中等，缺少对大数据量、性能、并发、内存与安全(如参数化查询)等细节的讨论。原创性有限，未比较其他方案或提供参考文献。可读性好，及时且符合常见企业需求，但对生产环境的健壮性和异常处理覆盖不足。综合评价偏实用但需补充深入与引用。
+
+### 记一次 .NET 某电力后台监控系统 内存暴涨分析
+
+https://www.cnblogs.com/huangxincheng/p/21461680
+
+文章描述一位朋友的电力系统出现内存暴涨，作者接收dump并用WinDbg分析。作者先用!address -summary查看内存分布，发现大量MEM_PRIVATE和约3.9GB已提交内存。随后使用!eeheap -gc检查托管堆，意在将问题分为托管与非托管两部分以便定位。文中给出关键命令和输出片段，但未给出完整根因分析与解决步骤。文章适合用于快速定位内存暴涨的初步排查。
+
+### 一个人的江湖:我与代码生成器的涅槃之路
+
+https://www.cnblogs.com/Rong-/p/21394207
+
+作者十余年独自开发代码生成器，经历多次推倒重建。早期过度抽象并将数据库规则耦合入实体，导致维护成本高。作者后续简化抽象，拆分实体与元信息，剥离硬编码SQL并迁移至XML，基于元数据实现轻量数据访问层和自动实体映射。用模板替代字符串拼接，降低生成复杂度。确立小步重构与分段验证流程，后补上单元测试保障质量。补齐配套组件，封装后端绑定控件、前端自动校验、Excel导入导出及可视化布局。生成器从ASP.NET扩展到Java和C++，在视频监控项目中显著提升开发效率。
+
+---
+
+## 国际周报
+
+## 主题(Topics)
+
+### .NET 11 Preview 6现已可用! .NET Blog
+
+https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/
+
+.NET 11 Preview 6已经发布。
+
+用于内存和文本的Straem适配器和各种性能改进，SDK中基于NativeAOT的命令，以及支持Union的属性的收件箱。
+
+### .NET and .NET Framework July 2026 servicing releases updates - .NET Blog
+
+https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-july-2026-servicing-updates/
+
+关于.NET 10、9、8和.NET Framework 4.8的2026 年 7 月服务版本。
+
+.NET以及.NET Framework都包含了各种各样的安全修正。
+
+### Avalonia 12.1 - Avalonia UI博客的新内容
+
+https://avaloniaui.net/blog/release-12-1
+
+Avalonia 12.1已发布。
+
+该版本包括Linux上的Wayland支持、拖放支持、渲染改进、新的TableView控件、平台改进以及SBOM的可用性。
+
+### CoreCLR Progress and the Mono Timeline for .NET MAUI - .NET Blog
+
+https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/
+
+了解CoreCLR在. NETMAUI(.NET for iOS， Android)和Mono时间表上的进展。
+
+在.NET11 Preview 6中，CoreCLR将取代iOS、Android和Mac Catalyst上的运行时，Mono将不再可用。
+
+本文还讨论了迁移到CoreCLR所带来的性能变化，以及测试的必要性。
+
+### VisualStudio管理员。参加我们的私人市场预览! - Visual Studio博客
+
+https://devblogs.microsoft.com/visualstudio/visual-studio-administrator-join-our-private-marketplace-preview/
+
+了解Visual Studio中扩展的私有市场预览。
+
+私有市场使您能够在组织内管理和交付VisualStudio扩展。在报道中，向感兴趣的使用者介绍了参加预览程序的方法。
+
+### Rider 2026.2发布候选版本已经出炉! - JetBrains Blog
+
+https://blog.jetbrains.com/dotnet/2026/07/15/rider-2026-2-release-candidate-is-out/
+
+Rider 2026.2 Release Candidate已经发布。
+
+该版本包括改进的代理技能，GitHub Copilot集成，更快的.NET工作流，WPF热重装，新的NuGet工具窗口等等。
+
+### ReSharper 2026.2候选版本已经发布! - JetBrains博客
+
+https://blog.jetbrains.com/dotnet/2026/07/15/resharper-2026-2-release-candidate-released/
+
+ReSharper 2026.2 Release Candidate已发布。
+
+该版本包括对基于ACP的代理的支持，改进的C#分析，.editorconfig和Roslyn分析器集成，以及在处理外模式下运行dotTrace， dotMemory和监控。
+- [ReSharper 2026.2 for VS Code-Compatible editors - The JetBrains Blog](https://blog.jetbrains.com/dotnet/2026/07/13/rs-vsc-2026-2/)
+- [Debugging for .NET in VS Code and Cursor： The #1 Requested Feature Is Here - The JetBrains Blog](https://blog.jetbrains.com/dotnet/2026/07/13/rs-vsc-debugging/)
+
+### Turso 0.7.0版
+
+https://turso.tech/blog/turso-0.7.0
+
+在Turso v0.7.0中实验性地引入了SQLite-compatible .NET绑定。
+
+(目前，Turso的NuGet软件包是由一个不相关的用户发布的，所以官方的软件包还没有发布。)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Someone unaffiliated with <a href="https://x.com/tursodatabase?ref_src=twsrc%5Etfw">@tursodatabase</a> has published the upcoming nuget package to <a href="https://t.co/iDyg1HdjPs">https://t.co/iDyg1HdjPs</a> ahead of the official publishing from Turso, meaning the name is taken and will prevent the official release from Turso itself. How can Turso recover ownership?…</p>&mdash; Marc-André Moreau (@awakecoding) <a href="https://x.com/awakecoding/status/2076706489792659571?ref_src=twsrc%5Etfw">July 13, 2026</a></blockquote>
+<script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
+### Path to CoreCLR， 2026-Upgrade Guide - Technical Articles -统一讨论
+
+https://discussions.unity.com/t/path-to-coreclr-2026-upgrade-guide/1714279/191
+
+Unity 6. 7 alpha 2 (6000. 7. 0 a2)中导入了试验性的CoreCLR桌面播放器。
+
+## Release(Release)
+- [社区工具包/Maui](https://github.com/CommunityToolkit/Maui)
+- [14.2.2](https://github.com/CommunityToolkit/Maui/releases/tag/14.2.2)
+- [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy)
+- [10.1.1版本](https://github.com/icsharpcode/ILSpy/releases/tag/v10.1.1)
+- [Microsoft/Windows AppSDK](https://github.com/microsoft/WindowsAppSDK)
+- [v1.8.10](https://github.com/microsoft/WindowsAppSDK/releases/tag/v1.8.10)
+- [newrellic/newrelic-dotnet-agent](https://github.com/newrelic/newrelic-dotnet-agent)
+- [10.53.0版](https://github.com/newrelic/newrelic-dotnet-agent/releases/tag/v10.53.0)
+- [Open-telemetry/Open-elemetry-dotnet](https://github.com/open-telemetry/opentelemetry-dotnet)
+- [核心-1.17.0](https://github.com/open-telemetry/opentelemetry-dotnet/releases/tag/core-1.17.0)
+
+## 文章、幻灯片和其他
+
+### 构建代理技能Bring.NET和Azure专家进入Visual Studio - Visual Studio博客
+
+https://devblogs.microsoft.com/visualstudio/built-in-agent-skills-in-visual-studio/
+
+了解Visual Studio中内置的.NET和Azure代理技能。
+
+这些技能包括在Visual Studio 2026 18.8或更高版本中。这篇文章提供了技能的概述，并提供了一些可以尝试的Azure技能。
+
+### Announcing .NET Modernization for Beginners - .NET Blog
+
+https://devblogs.microsoft.com/dotnet/announcing-dotnet-modernization-for-beginners/
+
+为了进行.NET的现代化，面向初学者的指南已经公开。
+
+本指南是关于使用GitHub Copilot的现代化代理将遗留的ASP.NET应用程序现代化到.NET 10的课程。
+
+### 在基于文件的应用程序中使用BenchmarkDotNet的方法
+
+https://zenn.dev/prozolic/articles/e3853758c224d9
+
+了解如何在基于文件的应用程序中使用BenchmarkDotNet(dotnet run app.cs)。
+
+在报道中，介绍了出现错误的原因和应对方法。
+
+### MicrosoftAgent Framework编排验证：群组聊天
+
+https://zenn.dev/yy7613/articles/0cbfcbd01a3d89
+
+了解如何验证Microsoft Agent Framework支持的业务流程模式。
+- [Microsoft Agent Framework编排验证： Concurrent(并行执行和聚合)](https://zenn.dev/yy7613/articles/ee2fe58d208eeb)
+- [Microsoft Agent Framework编排验证： Sequential(串行执行)](https://zenn.dev/yy7613/articles/66e541a3e11095)
+- [MicrosoftAgentFramework编排验证： Handoff(委托给专业代理)](https://zenn.dev/yy7613/articles/99725527e49e35)
+
+### VisualStudio开发人员/测试好处：在Azure中构建、测试和实验的自由-VisualStudio博客
+
+https://devblogs.microsoft.com/visualstudio/the-visual-studio-dev-test-benefit-freedom-to-build-test-and-experiment-in-azure/
+
+了解Azure中开发和测试的Dev/Test计划，该计划可作为Visual Studio订阅的好处。
+
+### 在Native AOT中创建和使用COM
+
+https://zenn.dev/shinta0806/articles/implement-com
+
+了解如何在NativeAOT中实现COM接口并使用它而无需在系统中注册。
+
+### [.NET].NET 11 Preview 5的新功能回顾(MSBuild版)
+
+https://qiita.com/KM_20005/items/3f2f5b773dcb1d02d622
+
+总结.NET 11 Preview 5中与MSBuild相关的新功能和改进。
+
+### [C#].NET 11 Preview 5的新功能回顾(库版)
+
+https://qiita.com/KM_20005/items/843baf63a880435f18a0
+
+总结.NET 11 Preview 5中与基本库相关的新功能和改进。
+
+### 挑选，管理，并获得你最喜欢的型号-VisualStudio博客
+
+https://devblogs.microsoft.com/visualstudio/pick-manage-and-get-the-most-from-your-models/
+
+了解Visual Studio中引入的改进，如模型选择器的改进和上下文使用情况的显示。
+
+### 我试着从Microsoft. Extensions. AI调用Bedrock AgentCore Gateway的Web搜索。
+
+https://qiita.com/karuakun/items/d16f8ad61f56780b98a4
+
+了解在Microsoft. Extensions. AI中尝试将Amazon Bedrock AgentCore Gateway的Web Search作为MCP调用的示例。
+
+### Claude Fable 5教给我们的FastEnum加速技术(1) -字符串的哈希值生成
+
+https://zenn.dev/xin9le/articles/6fb2045805996c
+
+据说使用Claude Fable 5进行了FastEnum的字符串散列速度的提高。
+
+### Serilog的buffered： true使日志看起来“没有打印”。
+
+https://zenn.dev/whitedeer/articles/081418416869eb
+
+关于在Serilog中使用buffered： true时，日志似乎没有输出的症状，因为它被缓冲。
+
+### dotInsights| 2017年7月-JetBrains博客
+
+https://blog.jetbrains.com/dotnet/2026/07/10/dotinsights-july-2026/
+
+来自JetBrains的.NET相关信息摘要，2026 年 7 月版。
+
+### Injecting a C# REPL into a running .NET process-Blog- Will Fuqua
+
+https://fuqua.io/blog/2026/06/injecting-a-csharp-repl-into-a-running-net-process/
+
+介绍了一个工具，该工具允许REPL在运行的应用程序上运行。在启动时注册并连接钩子的机制。
+
+### 与G#：使用Go、Kotlin和Swift ergonomics的现代.NET语言
+
+https://www.linkedin.com/pulse/meet-g-modern-net-language-go-kotlin-swift-ergonomics-david-obando-lwofc/
+
+他们已经设计并发布了一种新的.NET语言G#，其语法类似于Kotlin和Swift。
+
+## 库、库、工具等
+
+### nuskey 8/Tacos：Anon-demand，.NET的增量计算框架，受到salsa的启发。
+
+https://github.com/nuskey8/Tacos
+
+C#的按需增量计算框架，受salsa (salsa-rs)的启发
+## 今日人物
+
+**弗朗西斯·艾伦**(英语：Frances Elizabeth Allen，1932年8月4日—2020年8月4日)，美国计算机科学家、优化编译器先驱，长期任职于 IBM。她在程序优化、数据流分析和自动并行化方面的研究奠定了现代优化编译器的重要基础，也是首位 IBM 女性院士。
+
+2006年，艾伦因“对优化编译器技术的理论与实践作出开创性贡献，为现代优化编译器和自动并行执行奠定基础”获得图灵奖，成为首位获此奖项的女性。
+
+![弗朗西斯·艾伦](https://incerry-blog-imgs.oss-cn-hangzhou.aliyuncs.com/frances-allen.jpg)
+
+## C# .NET 交流群
+
+相信大家在开发中经常会遇到一些性能问题，苦于没有有效的工具去发现性能瓶颈，或者是发现瓶颈以后不知道该如何优化。之前一直有读者朋友询问有没有技术交流群，但是由于各种原因一直都没创建，现在很高兴的在这里宣布，我创建了一个专门交流.NET 性能优化经验的群组，主题包括但不限于：
+
+- 如何找到.NET 性能瓶颈，如使用 APM、dotnet tools 等工具
+- .NET 框架底层原理的实现，如垃圾回收器、JIT 等等
+- 如何编写高性能的.NET 代码，哪些地方存在性能陷阱
+
+希望能有更多志同道合朋友加入，分享一些工作中遇到的.NET 问题和宝贵的分析优化经验。**目前一群已满，现在开放二群。**可以加我 vx，我拉你进群: **ls1075** 另外也创建了 **QQ Group**: 687779078，欢迎大家加入。
